@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{relsize}
+
+\title{Math 177 Homework 1}
+\date{4/8/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Section 1.1}
+\begin{itemize}
+    \item [1.]
+          After 1 year: $A(1)=10000*1.04=\boxed{10400}$\\
+          After 2 years: $A(2)=10000*(1.04)^2=\boxed{10816}$\\
+          After 3 years: $A(3)=10000*(1.04)^3=\boxed{11248.64}$\\
+          Year 1 interest: $A(1)-A(0)=10400-10000=\boxed{400}$\\
+          Year 2 interest: $A(2)-A(1)=10816-10400=\boxed{416}$\\
+          Year 3 interest: $A(3)-A(2)=11248.64-10816=\boxed{432.64}$
+    \item [3.]
+          Balance after 12 months: $A(12)=10000*(1.01)^3*(1.0075)^{12-3}=\boxed{11019.70}$\\
+          Average compound monthly interest: $11019.70=10000*(1+i)^{12} \implies \boxed{i=0.812\%}$
+    \item [4.]
+          Let the 10th year be the reference point; then $10000=10000*(1+4\%)^{10}-(1+5\%)*K*(1+4\%)^{10-4}-(1+5\%)*K*(1+4\%)^{10-5}-K*(1+4\%)^{10-6}-K*(1+4\%)^{10-7}$. Solving for $K$ results in $\boxed{K=979.93}$.
+    \item [6.]
+          Joe's accumulated amount (simple interest): $10*(1+0.11*10) + 30*(1+0.11*5)=67.5$\\
+          Tina's accumulated amount (compound interest): $10*(1+0.0915)^n+30*(1+0.0915)^{2n}$\\
+          We can solve for $n$ by setting the two amounts equal: $67.5=10*(1+0.0915)^n+30*(1+0.0915)^{2n}$ which results in $\boxed{n=3.364610}$.
+    \item [11.]
+          To simplify the calculations, we can look at the accumulation after $17*67=1139$ days.
+          \begin{itemize}
+              \item [(a)]
+                    17-day rate of $\frac{3}{4}\%$: $a(67)=(1+0.0075)^{67}=1.649752$\\
+                    67-day rate of $3\%$: $a(17)=(1+0.03)^{17}=1.652848$\\
+                    Therefore \boxed{\text{67-day rate of $6\%$}} results in more rapid growth.
+              \item [(b)]
+                    17-day rate of $\frac{3}{2}\%$: $a(67)=(1+0.015)^{67}=2.711595$\\
+                    67-day rate of $6\%$: $a(17)=(1+0.06)^{17}=2.692773$\\
+                    Therefore \boxed{\text{17-day rate of $\frac{3}{2}\%$}} results in more rapid growth.
+          \end{itemize}
+    \item [12.]
+          \begin{itemize}
+              \item [(a)]
+                    Amount after 6 months: $1000*(1-9\%)*(1+25\%)*(1-1.5\%)=1120.4375$\\
+                    6-month return: $(1120.4375-1000)/1000=\boxed{12.04\%}$
+              \item [(b)]
+                    Amount after 6 months: $1000*(1-9\%)*(1-\frac{3.50}{4.00})*(1-1.5\%)=784.30625$\\
+                    6-month return: $(784.30625-1000)/1000=\boxed{-21.57\%}$
+          \end{itemize}
+\end{itemize}
+
+\section*{Section 1.2}
+\begin{itemize}
+    \item [2.]
+          $v=\frac{1}{1+10\%}=0.909091$\\
+          Child 1 (age 1): $PV_1=25000*v^{18-1}+100000*v^{21-1}=19810.47952$\\
+          Child 2 (age 3): $PV_2=25000*v^{18-3}+100000*v^{21-3}=23970.68023$\\
+          Child 3 (age 6): $PV_3=25000*v^{18-6}+100000*v^{21-6}=31904.97538$\\
+          Total: $PV=PV_1+PV_2+PV_3=\boxed{75686.14}$
+    \item [5.]
+          Pick July 1, 2021 as time of reference and let payment needed then be $K$. Then, $200*(1+4\%)^{2021-2020}+300*v^{2022-2021}=100*(1+4\%)^{2021-2017}+K$. Solving for $K$ results in $\boxed{K=379.48}$.
+    \item [7.]
+          Let time 0 be the time of reference. Then, $100+200*v^n+300*v^{2n}=600*v^{10} \implies 100+200*0.75941+300*(0.75941)^2=600*(\frac{1}{1+i})^{10}$. Solving for $i$ results in $\boxed{i=0.03511}$.
+    \item [8.]
+          Let the cost of the machine in scenario $i$ be $M_i$.
+          \begin{itemize}
+              \item [(a)] $M_1=20*(24000)*(1+\frac{0.75\%}{12})^{4*12}=\boxed{494613.54}$
+              \item [(b)] $M_2-200000*(\frac{1}{1+0.75\%})^{4*12}=M_1 \implies M_2=\boxed{634336.37}$
+              \item [(c)] $M_3=0.15*M_3*(\frac{1}{1+0.75\%})^{4*12}+M_1 \implies M_3=\boxed{552512.50}$
+          \end{itemize}
+    \item [12.] 
+    Let $i$ be the implied annual effective interest rate and the time of reference be 2 years from now. Then we get $1000*(1+i)^2+1092=2000*(1+i)$ which has \boxed{\text{no real solution}}.
+    \item [16.] 
+    \begin{itemize}
+          \item [(a)] We can find $B_1$ by adding the initial balance ($B_0$) with interest and all transactions with their respective interests: $\boxed{B_1=B_0*(1+i)+\sum_{k=1}^{n}a_k*[1+i*(1-t_k)]}$
+          \item [(b)] 
+          \item [(c)]
+    \end{itemize}
+    \item [17.]
+    \item [18.]
+\end{itemize}
+
+\section*{Section 1.4}
+\begin{itemize}
+    \item [3.]
+    \item [4.]
+    \item [10.]
+\end{itemize}
+
+\section*{Section 1.5}
+\begin{itemize}
+    \item [1.]
+    \item [2.]
+    \item [4.]
+    \item [5.]
+    \item [11.]
+\end{itemize}
+
+\end{document}

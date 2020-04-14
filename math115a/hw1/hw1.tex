@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[]{enumitem}
+\usepackage[]{setspace}
+\usepackage[]{amsmath}
+\usepackage[]{amssymb}
+
+\title{Math 115A Homework 1}
+\date{4/8/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{enumerate}
+      \item
+            Let $V=\mathbb{R}^2$ and $W=\text{span} \begin{pmatrix} 1 \\ 1 \end{pmatrix}$. List all the elements of $V/W$, making sure not to list any element twice.
+
+            \textbf{Answer: } Visually, $W$ is simply the line $y=x$ in $\mathbb{R}^2$. Since $V/W$ is obtained by adding a vector of V to W (i.e. shifting $y=x$), $V/W$ refers to the space of all lines in $\mathbb{R}^2$ with a slope of 1. The given definition $V/W=\{v+W \mid v \in V\}$ allows duplicate entries where two different vectors in $V$ can shift along the same line (e.g. $\begin{pmatrix} 1 \\ 2 \end{pmatrix}+W$ and $\begin{pmatrix} 3 \\ 4 \end{pmatrix}+W$ are the same). We can eliminate the duplicates by specifying that the chosen $v \in V$ has to be on the y-axis. That is, we require each "shifting" vector from $V$ to satisfy the form $\begin{pmatrix} 0 \\ b \end{pmatrix}, b \in \mathbb{F}$, resulting in the set $V/W=\{\begin{pmatrix} 0 \\ b \end{pmatrix}+W, b \in \mathbb{F}\}$.
+
+      \item
+            Prove that $V/W$ is a vector space.
+
+            \textbf{Answer: } We can do so by verifying the axioms of vector space on $V/W$. Define $x,y,z \in V/W$ such that $x=u+W$, $y=v+W$ and $z=w+W$ for $u,v,w \in V$. Additionally, let $a,b \in \mathbb{F}$.
+            \begin{itemize}[leftmargin=4em]
+                  \item [(VS1)]
+                        $x+y\\
+                              =(u+W)+(v+W)\\
+                              =(u+v)+W\\
+                              \text{Since } u,v \in V \text{ and } V \text{ is a vector space, }\\
+                              =(v+u)+W\\
+                              =(v+W)+(u+W)\\
+                              =y+x$.
+                  \item [(VS2)]
+                        $(x+y)+z\\
+                              =[(u+W)+(v+W)]+(w+W)\\
+                              =[(u+v)+W]+(w+W)\\
+                              =[(u+v)+w]+W\\
+                              \text{Since } u,v,w \in V \text{ and } V \text{ is a vector space, }\\
+                              =[u+(v+w)]+W\\
+                              =(u+W)+[(v+w)+W]\\
+                              =(u+W)+[(v+W)+(w+W)]\\
+                              =x+(y+z)$.
+                  \item [(VS3)]
+                        Let $0_{V/W}$ and $0_V$ be the zero vectors of $V/W$ and $V$, respectively. Then, $0_{V/W}=0_V+W$ satisfies this axiom. Proof: \\
+                        $0_{V/W}+x\\
+                              =(0_V+W)+(u+W)\\
+                              =(0_V+u)+W\\
+                              =u+W\\
+                              =x$.
+                  \item [(VS4)]
+                        Since $u \in V$, there exists a $-u \in V$ such that $u + (-u) = 0_V$. Define $-x \in V/W$ as $-u+W$, then: \\
+                        $x+(-x)\\
+                              =(u+W)+(-u+W)\\
+                              =[u+(-u)]+W\\
+                              =0_V+W\\
+                              =0_W$.
+                  \item [(VS5)]
+                        $1x\\
+                              =1(u+W)\\
+                              =1u+W\\
+                              \text{Since } u \in V \text{ and } V \text{ is a vector space, }\\
+                              =u+W\\
+                              =x$.
+                  \item [(VS6)]
+                        $(ab)x\\
+                              =(ab)(u+W)\\
+                              =[(ab)u]+W\\
+                              \text{Since } u \in V \text{ and } V \text{ is a vector space, }\\
+                              =[a(bu)]+W\\
+                              =a(bu+W)\\
+                              =a[b(u+W)]\\
+                              =a(bx)$.
+                  \item [(VS7)]
+                        $a(x+y)\\
+                              =a[(u+W)+(v+W)]\\
+                              =a[(u+v)+W]\\
+                              =(au+av)+W\\
+                              =(au+W)+(av+W)\\
+                              =a(u+W)+a(v+W)\\
+                              =ax+ay$.
+                  \item [(VS8)]
+                        $(a+b)x\\
+                              =(a+b)(u+W)\\
+                              =[(a+b)u]+W\\
+                              \text{Since } u \in V \text{ and } V \text{ is a vector space: }\\
+                              =(au+bu)+W\\
+                              =(au+W)+(bu+W)\\
+                              =a(u+W)+b(u+W)\\
+                              =ax+bx$.
+            \end{itemize}
+
+      \item
+            Let $\mathbb{C}[x]$ be the vector space of polynomials and let $W=span\{x^{2a} \mid a \geq 0\}$.
+            \begin{enumerate}
+                  \item Find a set of 3 linearly independent elements of $\mathbb{C}/W$.
+
+                        \textbf{Answer: } Claim: $x+W$, $x^3+W$, $x^5+W$ are linearly independent elements of $\mathbb{C}/W$. \\
+                        Proof: by contradiction. Suppose $x+W$, $x^3+W$, $x^5+W$ are linearly dependent, then there must exists nontrivial coefficients $\lambda_1, \lambda_2, \lambda_3 \in \mathbb{C}$ such that $\lambda_1(x+W)+\lambda_2(x^3+W)+\lambda_3(x^5+W)=0_{V/W}$. Using the defined addition and scalar multiplication, we can simplify the above to $(\lambda_1 x + \lambda_2 x^3 + \lambda_3 x^5) + W = 0_V+W$. The previous equation implies that $\lambda_1 x + \lambda_2 x^3 + \lambda_3 x^5 = 0_V$; since $x, x^3, x^5$ are linearly independent vectors in $V$, $\lambda_1,\lambda_2,\lambda_3$ must be trivial coefficients. Therefore, our initial assumption was false and $x+W$, $x^3+W$, $x^5+W$ are indeed linearly independent elements of $\mathbb{C}/W$.
+
+                  \item Find 2 nonzero elements $p,q \in \mathbb{C}[x]$ that are linearly independent and such that $p+W$ and $q+W$ are linearly dependent and nonzero.
+
+                        \textbf{Answer: } Claim: $p=x+x^{6488}$ and $q=x+x^{4546}$ satisfies the given conditions. \\
+                        Proof: $p,q$ are linearly independent in $\mathbb{C}[x]$ by comparing coefficients. We can show that $p+W$ and $q+W$ are linearly dependent and nonzero by substituting $p,q$ and expanding them as follows:
+                        \begin{center}
+                        $p+W=(x+x^{6488})+W=(x+W)+(x^{6488}+W)$, \\
+                        $q+W=(x+x^{4546})+W=(x+W)+(x^{4546}+W)$. \\
+                        \end{center}
+                        Since $x^{6488} \in W$, $x^{6488}+W=W=0_{C/W}$. We can then  simplify the above form of $p+W$ to $p+W=(x+W)+0_{C/W}=x+W$. Similarly, $q+W=x+W=p+W$. Thus, $p+W$ and $q+W$ are trivially linearly dependent in $\mathbb{C}/W$.
+
+            \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

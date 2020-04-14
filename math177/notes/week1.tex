@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{relsize}
+
+\title{Math 177 Week 1 Notes}
+\author{Jiaping Zeng}
+\date{4/12/2020}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item Accumulated amount function: $A(t)$ = [accumulated amount at time t]
+          \begin{itemize}
+              \item Accumulation function: $a(t)$ = when the initial fund is 1 at time 0
+              \item $a(0)=1$ and $A(t)=A(0)a(t)$
+          \end{itemize}
+    \item Effective rate of interest in the $t^{th}$ period: $i_t=\dfrac{a(t)-a(t-1)}{a(t-1)}=\dfrac{A(t)-A(t-1)}{A(t-1)}$
+          \begin{itemize}
+              \item $a(t)=(1+i_t)a(t-1)=\mathlarger{\prod_{j=1}^{t}(1+i_j)}$
+              \item Compound interest: $a(t)=(1+i)^t \implies i_t=i$
+              \item Simple interest: $a(t)=1+it \implies i_t=\dfrac{i}{1+i(t-1)}$
+          \end{itemize}
+    \item Equivalent rates of interest: if two rates result in the same accumulated values at each point in time
+    \item Present value (PV): "\textit{how much should I invest today to have a given amount at the end of t years?"}
+          \begin{itemize}
+              \item Discount function: $PV=\dfrac{1}{a(t)}$
+              \item For compound interest: $PV=\dfrac{1}{(1+i)^t}=\left(\dfrac{1}{i+i}\right)^t$
+                    \begin{itemize}
+                        \item Present value factor/discount factor: $v=\dfrac{1}{1+i}$
+                    \end{itemize}
+          \end{itemize}
+    \item Equation of value: the equation balacing the current values of cash inflows and outflows
+          \begin{itemize}
+              \item Note: a reference point must be chosen
+              \item Current value at a given time: [accumulated value prior to given time] + [present value occuring on or after given time]
+          \end{itemize}
+    \item Nominal interest ($i^{(m)}$): interest expressed as an annual amount payable in equal installments during the year
+          \begin{itemize}
+              \item Compounding period: $\dfrac{1}{m}$ years
+              \item Interest rate per period: $\dfrac{i^{(m)}}{m}$
+              \item Equivalent effective annual interest: $1+i=\left(1+\dfrac{i^{(m)}}{m}\right)^m$
+          \end{itemize}
+    \item Effective rate of discount in the $t^{th}$ period: $d_t=\dfrac{a(t)-a(t-1)}{a(t)}=\dfrac{A(t)-A(t-1)}{A(t)}$
+          \begin{itemize}
+              \item $d_t=\dfrac{i_t}{1+i_t}$ and $i_t=\dfrac{d_t}{1-d_t}$
+              \item Simple discount: $\dfrac{1}{a(t)}=1-d_t \implies a(t)=\dfrac{1}{1-d_t}$
+          \end{itemize}
+    \item Interest payable
+          \begin{itemize}
+              \item In arrears: payable at the end of an interest period (standard way)
+              \item In advance: payable at the start of an interest period
+          \end{itemize}
+    \item Nominal discount ($d^{(m)}$):
+          \begin{itemize}
+              \item Compounding period: $\dfrac{1}{m}$ years
+              \item Interest rate per period: $\dfrac{d^{(m)}}{m}$
+              \item Equivalent effective annual interest: $1-d=\left(1-\dfrac{d^{(m)}}{m}\right)^m$
+          \end{itemize}
+    \item Force of interest: $\delta_t=\dfrac{a'(t)}{a(t)}=\dfrac{A'(t)}{A(t)}$
+          \begin{itemize}
+              \item $A(t)=A(0)e^{\int_0^t\delta_s ds}$
+              \item When $\delta_t$ is constant, we may drop the subsubscript and denote it as $\delta$
+                    \begin{itemize}
+                        \item $a(t)=e^{\int_0^t\delta ds}=e^{\delta t}$
+                    \end{itemize}
+              \item $i^{(\infty)}:=\lim_{m\rightarrow\infty}i^{(m)}=ln(1+i)=\delta$
+          \end{itemize}
+\end{itemize}
+
+\end{document}
