@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{amsmath}
+
+\title{Stats 100A Homework 1}
+\author{Jiaping Zeng}
+\date{4/15/2020}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Problem 1}
+\begin{enumerate}
+    \item
+          $P(A)=\frac{50}{100}=\frac{1}{2}$\\
+          $P(B)=\frac{40}{100}=\frac{2}{5}$\\
+          $P(A|B)=\frac{30}{40}=\frac{3}{4}$\\
+          $P(B|A)=\frac{30}{50}=\frac{3}{5}$\\
+          Since $P(A|B)\neq P(A)$ and $P(B|A)\neq P(B)$, $A$ and $B$ are not independent events.
+    \item
+          $P(A\cap B)=P(A)P(B|A)=\frac{1}{2}*\frac{3}{5}=\frac{3}{10}$\\
+          $P(A\cap B)=P(B)P(A|B)=\frac{2}{5}*\frac{3}{4}=\frac{3}{10}$\\
+          Thus $P(A\cap B)=P(A)P(B|A)=P(B)P(A|B)$. The chain rule indeed stands.
+    \item
+          $P(A)P(B|A)=\frac{2}{5}*\frac{3}{4}=\frac{3}{10}$\\
+          $P(A^c)P(B|A^c)=\frac{50}{100}*\frac{10}{50}=\frac{1}{10}$\\
+          Then $P(A)P(B|A)+P(A^c)P(B|A^c)=\frac{3}{10}+\frac{1}{10}=\frac{2}{5}$ which is indeed equal to $P(B)$.
+    \item
+          $\mathlarger{\frac{P(A\cap B)}{P(B)}=\frac{\frac{3}{10}}{\frac{2}{5}}=\frac{3}{4}=P(A|B)}$\\
+          $\mathlarger{\frac{P(A)P(B|A)}{P(A)P(B|A)+P(A^c)P(B|A^c)}=\frac{\frac{1}{2}*\frac{3}{5}}{\frac{1}{2}*\frac{3}{5}+\frac{1}{2}*\frac{1}{5}}=\frac{3}{4}=P(A|B)}$\\
+          Thus Bayes rule does stand.
+    \item
+          Chain rule: The proportion of tall males in the population is calculated by the proportion of males in the population times the proportion of tall people in the male population. Alternatively, it can also be calculated by the proportoin of tall people times the proportion of males in the population of tall people.\\
+          Rule of total probability: The proportion of tall people in the population is equivalent to: the product of the proportion of males in the population and the proportion of tall people in the male population, added to the product of the proportion of females in the population and the proportion of females in the tall population.\\
+          Bayes rule: The proportion of males in the tall population is the same as the proportion of tall males in the population divided by the proportion of tall people in the population. Another interpretation can be formed by expanding the numerator and the denominator using chain rule and rule of total probabiltiy respectively with their interpretation.
+    \item
+          Chain rule: $P(X=male AND Y>6)=P(X=male)P()$\\
+          Rule of total probability:\\
+          Bayes rule:
+\end{enumerate}
+
+\section*{Problem 2}
+\begin{enumerate}
+    \item f
+    \item f
+    \item f
+\end{enumerate}
+
+\section*{Problem 3}
+\begin{enumerate}
+    \item f
+    \item f
+    \item f
+    \item f
+\end{enumerate}
+
+\section*{Problem 4}
+\begin{enumerate}
+    \item f
+    \item f
+    \item f
+\end{enumerate}
+
+\section*{Problem 5}
+\begin{enumerate}
+    \item f
+    \item f
+    \item f
+    \item f
+\end{enumerate}
+
+\section*{Problem 6}
+\begin{enumerate}
+    \item f
+    \item f
+    \item f
+    \item f
+\end{enumerate}
+
+\end{document}
