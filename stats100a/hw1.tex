@@ -2,7 +2,10 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{relsize}
+\usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{forest}
+\usepackage{array}
 
 \title{Stats 100A Homework 1}
 \author{Jiaping Zeng}
@@ -35,49 +38,138 @@
     \item
           Chain rule: The proportion of tall males in the population is calculated by the proportion of males in the population times the proportion of tall people in the male population. Alternatively, it can also be calculated by the proportoin of tall people times the proportion of males in the population of tall people.\\
           Rule of total probability: The proportion of tall people in the population is equivalent to: the product of the proportion of males in the population and the proportion of tall people in the male population, added to the product of the proportion of females in the population and the proportion of females in the tall population.\\
-          Bayes rule: The proportion of males in the tall population is the same as the proportion of tall males in the population divided by the proportion of tall people in the population. Another interpretation can be formed by expanding the numerator and the denominator using chain rule and rule of total probabiltiy respectively with their interpretation.
+          Bayes rule: The proportion of males in the tall population is the same as the proportion of tall males in the population divided by the proportion of tall people in the population. Another interpretation can be formed by expanding the numerator and the denominator using chain rule and rule of total probability respectively with their interpretation.
     \item
-          Chain rule: $P(X=male AND Y>6)=P(X=male)P()$\\
-          Rule of total probability:\\
-          Bayes rule:
+          Chain rule: $P(X=male\text{ and }Y>6)=P(X=male)P(Y>6\text{ given }X=male)=P(Y>6)P(X=male\text{ given }Y>6)$\\
+          Rule of total probability: $P(Y>6)=P(X=male)P(Y>6\text{ given }X=male)+P(X!=male)P(Y>6\text{ given }X!=male)$\\
+          Bayes rule: $P(X=male\text{ given }Y>6)=\dfrac{P(X=male\text{ and }Y>6)}{P(Y>6)}\\=\dfrac{P(X=male)P(Y>6\text{ given }X=male)}{P(X=male)P(Y>6\text{ given }X=male)+P(X!=male)P(Y>6\text{ given }X!=male}$
 \end{enumerate}
 
 \section*{Problem 2}
 \begin{enumerate}
-    \item f
-    \item f
-    \item f
+    \item Since $X^2+Y^2\leq 1$ is a filled circle centered at origin with radius 1, $P(X^2+Y^2\leq 1)$ would be the quarter circle in the first quardrant inside a square with its bottom-left corner at the origin and side length 1. Thus $P(X^2+Y^2\leq 1)=\dfrac{\frac{1}{4}\pi*1^2}{1^2}=\dfrac{\pi}{4}$.
+    \item As shown above, the probability of the random point landing in the quarter circle is $\frac{\pi}{4}$. Therefore, using Law of large numbers, $m\approx\frac{\pi}{4}n$ for sufficiently large $n$. We can rearrange the equation to find $\pi$: $\pi\approx\frac{4m}{n}$
+    \item $X\geq \frac{1}{2}$ is the right half of our square and $X+Y\geq 1$ is the upper-right triangle of the square. Then, $P(X\geq \frac{1}{2})=\frac{1}{2}$. $P(X\geq \frac{1}{2}\mid X+Y\geq 1)$ would be the intersection of the two areas, which by visualization is $\frac{3}{8}$ of the area of the entire square.
 \end{enumerate}
 
 \section*{Problem 3}
 \begin{enumerate}
-    \item f
-    \item f
-    \item f
-    \item f
+    \item Since each flip has exactly 2 outcomes, the sample space would consist of $2^5=32$ possibilities. Let $H$ represent a flip that lands on head and $T$ represent one that lands on tail, the sample space would look like the following: $\{HHHHH, HHHHT, ..., HTTTT, TTTTT\}$.
+    \item The desired outcome is 2 heads out of 5 flips, thus it is simply $\mathlarger{\binom{5}{2}=10}$ sequences.
+    \item
+          $\mathlarger{P(X=0)=\frac{\binom{5}{0}}{2^5}=\frac{1}{32}}$\\
+          $\mathlarger{P(X=1)=\frac{\binom{5}{1}}{2^5}=\frac{5}{32}}$\\
+          $\mathlarger{P(X=2)=\frac{\binom{5}{2}}{2^5}=\frac{10}{32}}$\\
+          $\mathlarger{P(X=3)=\frac{\binom{5}{3}}{2^5}=\frac{10}{32}}$\\
+          $\mathlarger{P(X=4)=\frac{\binom{5}{4}}{2^5}=\frac{5}{32}}$\\
+          $\mathlarger{P(X=5)=\frac{\binom{5}{5}}{2^5}=\frac{1}{32}}$
+    \item
+          The problem can be visualized using the diagram below, with each level representing each flip in sequence. The boxed terminal nodes represent sequences with exactly 2 heads: \\
+          \scalebox{0.55}{
+              \begin{forest}
+                  [Start [H [H [H [H [H] [T]] [T [H] [T]]] [T [H [H] [T]] [T [H] [\boxed{T}]]]] [T[H [H [H] [T]] [T [H] [\boxed{T}]]] [T [H [H] [\boxed{T}]] [T [\boxed{H}] [T]]]]] [T [H [H [H [H] [T]] [T [H] [\boxed{T}]]] [T [H [H] [\boxed{T}]] [T [\boxed{H}] [T]]]] [T[H [H [H] [\boxed{T}]] [T [\boxed{H}] [T]]] [T [H [\boxed{H}] [T]] [T [H] [T]]]]]]
+              \end{forest}
+          }\\
+          As shown above, there is a total of 32 possible combinations with 10 of them containing exactly 2 heads.
 \end{enumerate}
 
 \section*{Problem 4}
+Let the below diagram represent a Galton board. Each * represents a pin and each U represents a bin.\\
+\begin{tabular}{>{\hspace{12pt}}*{13}{c}}
+     &   &   &   &   &   & * &   &   &   &   &   & \\
+     &   &   &   &   & * &   & * &   &   &   &   & \\
+     &   &   &   & * &   & * &   & * &   &   &   & \\
+     &   &   & * &   & * &   & * &   & * &   &   & \\
+     &   & * &   & * &   & * &   & * &   & * &   & \\
+     & U &   & U &   & U &   & U &   & U &   & U & \\
+\end{tabular}
 \begin{enumerate}
-    \item f
-    \item f
-    \item f
+    \item Below is the corresponding Pascal triangle. Each number represents the number of possible paths that goes from the root to the position.\\
+          \begin{tabular}{>{$n=}l<{$\hspace{12pt}}*{13}{c}}
+              0 &  &   &   &   &   &    & 1 &    &   &   &   &   & \\
+              1 &  &   &   &   &   & 1  &   & 1  &   &   &   &   & \\
+              2 &  &   &   &   & 1 &    & 2 &    & 1 &   &   &   & \\
+              3 &  &   &   & 1 &   & 3  &   & 3  &   & 1 &   &   & \\
+              4 &  &   & 1 &   & 4 &    & 6 &    & 4 &   & 1 &   & \\
+              5 &  & 1 &   & 5 &   & 10 &   & 10 &   & 5 &   & 1 & \\
+          \end{tabular}
+    \item
+          $\mathlarger{P(\text{Bin}_0)=\frac{\binom{5}{0}}{2^5}=\frac{1}{32}}$\\
+          $\mathlarger{P(\text{Bin}_1)=\frac{\binom{5}{1}}{2^5}=\frac{5}{32}}$\\
+          $\mathlarger{P(\text{Bin}_2)=\frac{\binom{5}{2}}{2^5}=\frac{10}{32}}$\\
+          $\mathlarger{P(\text{Bin}_3)=\frac{\binom{5}{3}}{2^5}=\frac{10}{32}}$\\
+          $\mathlarger{P(\text{Bin}_4)=\frac{\binom{5}{4}}{2^5}=\frac{5}{32}}$\\
+          $\mathlarger{P(\text{Bin}_5)=\frac{\binom{5}{5}}{2^5}=\frac{1}{32}}$
+    \item
+          We can obtain the proportions of balls in each bin by multiplying the theoretical probabilities found above by the total of 1 million balls:\\
+          Bin 0: $\frac{1}{32}*10^6=31250$ balls\\
+          Bin 1: $\frac{5}{32}*10^6=156250$ balls\\
+          Bin 2: $\frac{10}{32}*10^6=312500$ balls\\
+          Bin 3: $\frac{10}{32}*10^6=312500$ balls\\
+          Bin 4: $\frac{5}{32}*10^6=156250$ balls\\
+          Bin 5: $\frac{1}{32}*10^6=31250$ balls
 \end{enumerate}
 
 \section*{Problem 5}
 \begin{enumerate}
-    \item f
-    \item f
-    \item f
-    \item f
+    \item Using the recursive definition $X_{t+1}=X_t+\epsilon_t$, we can expand $X_5$ into $X_5=X_0+\epsilon_0+\epsilon_1+\epsilon_2+\epsilon_3+\epsilon_4$ where $\epsilon_t$ is either $-1$ or $1$. We can find the minimum and maximum values of $X_5$ easily by taking all $\epsilon_t$ to be $-1$ and $1$, respectively, resulting in a minimum of $-5$ and a maximum of $5$. Additionally, since we are walking an odd number of steps, it is not possible for $X_5$ to be even. Therefore, the set of possible values are all odd values between $-5$ and $5$, i.e. $X_5\in\{-5,-3,-1,1,3,5\}$.
+    \item
+          We can consider each $\epsilon_t$ as an event with exactly two possible outcomes. Then, the probability of each value would be as follows:\\
+          $\mathlarger{P(X=-5)=\frac{\binom{5}{0}}{2^5}=\frac{1}{32}}$\\
+          $\mathlarger{P(X=-3)=\frac{\binom{5}{1}}{2^5}=\frac{5}{32}}$\\
+          $\mathlarger{P(X=-1)=\frac{\binom{5}{2}}{2^5}=\frac{10}{32}}$\\
+          $\mathlarger{P(X=1)=\frac{\binom{5}{3}}{2^5}=\frac{10}{32}}$\\
+          $\mathlarger{P(X=3)=\frac{\binom{5}{4}}{2^5}=\frac{5}{32}}$\\
+          $\mathlarger{P(X=5)=\frac{\binom{5}{5}}{2^5}=\frac{1}{32}}$
+    \item Since $|X_{t+1}-X_t|=|\epsilon_t|=1$, $X_{t+1}$ and $X_t$ can only be one unit away from each other. Since we have no restraints on the values of $i$ and $j$, one way to represent $P(X_{t+1}=j\mid X_t=i)$ is as the piecewise function below:
+          \[
+              P(X_{t+1}=j\mid X_t=i)=
+              \begin{cases}
+                  \frac{1}{2} & |j-i|=1     \\
+                  0           & |j-1|\neq 1
+              \end{cases}
+          \]
+    \item Assuming the 1 million people are practicing proper social distancing and keeping 6 feet distances between each other, the number of people landing in each of positions found in part 1 would be as follows:\\
+          Position -5: $\frac{1}{32}*10^6=31250$ people\\
+          Position -3: $\frac{5}{32}*10^6=156250$ people\\
+          Position -1: $\frac{10}{32}*10^6=312500$ people\\
+          Position 1: $\frac{10}{32}*10^6=312500$ people\\
+          Position 3: $\frac{5}{32}*10^6=156250$ people\\
+          Position 5: $\frac{1}{32}*10^6=31250$ people
 \end{enumerate}
 
 \section*{Problem 6}
 \begin{enumerate}
-    \item f
-    \item f
-    \item f
-    \item f
+    \item
+          $P(X_1=1)=\frac{1}{3}$\\
+          $P(X_1=2)=\frac{2}{3}$\\
+          $P(X_2=1)=P(X_1=1)P(X_2=1|X_1=1)+P(X_1=2)P(X_2=1|X_1=2)=\frac{1}{3}*\frac{1}{3}+\frac{2}{3}*\frac{2}{3}=\frac{5}{9}$\\
+          $P(X_2=2)=P(X_1=1)P(X_2=2|X_1=1)+P(X_1=2)P(X_2=2|X_1=2)=\frac{1}{3}*\frac{2}{3}+\frac{2}{3}*\frac{1}{3}=\frac{4}{9}$\\
+          $P(X_3=1)=P(X_2=1)P(X_3=1|X_2=1)+P(X_2=2)P(X_3=1|X_2=2)=\frac{5}{9}*\frac{1}{3}+\frac{4}{9}*\frac{2}{3}=\frac{13}{27}$\\
+          $P(X_3=2)=P(X_2=1)P(X_3=2|X_2=1)+P(X_2=2)P(X_3=2|X_2=2)=\frac{5}{9}*\frac{2}{3}+\frac{4}{9}*\frac{1}{3}=\frac{14}{27}$\\
+          $P(X_4=1)=P(X_3=1)P(X_4=1|X_3=1)+P(X_3=2)P(X_4=1|X_3=2)=\frac{13}{27}*\frac{1}{3}+\frac{14}{27}*\frac{2}{3}=\frac{41}{81}$\\
+          $P(X_4=2)=P(X_3=1)P(X_4=2|X_3=1)+P(X_3=2)P(X_4=2|X_3=2)=\frac{13}{2}*\frac{2}{3}+\frac{14}{27}*\frac{1}{3}=\frac{40}{81}$
+    \item $K=\begin{bmatrix}
+                  \frac{1}{3} & \frac{2}{3} \\
+                  \frac{2}{3} & \frac{1}{3}
+              \end{bmatrix}$
+    \item \begin{itemize}
+              \item [(a)] Prove $p^{(t+1)}=p^{(t)}K$: By direct proof.\\
+                    To find $p^{(t+1)}=(P(X_{t+1}=1),P(X_{t+1}=2))$, we can calculate each component of the tuple separately. For case $X_{t+1}=1$ (i.e. the probability of the person landing on state 1 at time $t+1$), we can calcualte $P(X_{t+1})$ using $P(X_t)$. There are two possible scenarios in this case: the person was on state 1 at time $t$ and decided to stay ($P=\frac{1}{3}$), or the person was on state 2 at time $t$ and decided to move ($P=\frac{2}{3}$). Then, \[P(X_{t+1}=1)=\frac{1}{3}P(X_t=1)+\frac{2}{3}P(X_t=2)\] Similarly, \[P(X_{t+1}=2)=\frac{2}{3}P(X_t=1)+\frac{1}{3}P(X_t=2)\] Recall that, by definition, $p^{(t)}=(P(X_t=1), P(X_t)=2)$. Then the two equations above can be rewritten as the follows: \[P(X_{t+1}=1)=\left(\frac{1}{3},\frac{2}{3}\right)^Tp^{(t)}\] \[P(X_{t+1}=2)=\left(\frac{2}{3},\frac{1}{3}\right)^Tp^{(t)}\] We can see that the two coefficient vectors form the matrix $K$. Then, by combining the two equations back into the form $p^{(t+1)}=(P(X_{t+1}=1),P(X_{t+1}=2))$, we get $p^{(t+1)}=p^{(t)}K$.
+
+              \item [(b)] Prove $p^{(t)}=p^{(0)}K^t$: By induction.\\
+                    Base case: $t=0$. Since $K^0$ is simply the identity matrix, $p^{(0)}=p^{(0)}K^0$ is trivially true.\\
+                    Inductive step: Assume $p^{(t)}=p^{(0)}K^t$. Then, to find $p^{(t+1)}$, we can simply use the formula proved in the previous part: $p^{(t+1)}=p^{(t)}K$. By substitution, $p^{(t+1)}=(p^{(0)}K^t)K \implies p^{(t+1)}=p^{(0)}(K^tK) \implies p^{(t+1)}=p^{(0)}K^{t+1})$. Therefore, $p^{(t)}=p^{(0)}K^t$ is true by induction.
+          \end{itemize}
+    \item The number of people in each state can be found by multiplying the probabilities found in part 1 by the size of the population (i.e. one million).\\
+    State 1 at time 1: $\frac{1}{3}*10^6\approx 333333$ people\\
+    State 2 at time 1: $\frac{2}{3}*10^6\approx 666667$ people\\
+    State 1 at time 2: $\frac{5}{9}*10^6\approx 555556$ people\\
+    State 2 at time 2: $\frac{4}{9}*10^6\approx 444444$ people\\
+    State 1 at time 3: $\frac{13}{27}*10^6\approx 481481$ people\\
+    State 2 at time 3: $\frac{14}{27}*10^6\approx 518519$ people\\
+    State 1 at time 4: $\frac{41}{81}*10^6\approx 506173$ people\\
+    State 2 at time 4: $\frac{40}{81}*10^6\approx 493827$
 \end{enumerate}
 
 \end{document}
