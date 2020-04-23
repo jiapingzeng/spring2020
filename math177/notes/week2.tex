@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{actuarialangle}
+\usepackage{amsmath}
+\usepackage{relsize}
+
+\title{Math 177 Week 2 Notes}
+\author{Jiaping Zeng}
+\date{4/18/2020}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+	\item Annuity: a series of payments to be made at defined times in the future
+	      \begin{itemize}
+		      \item Annuity-certain: payments are not contingent on a future event
+		      \item We assume annuity-certain unless specified otherwise
+	      \end{itemize}
+	\item Annuity-immediate: a series of payments for which the following conditions are met
+	      \begin{itemize}
+		      \item [1.] the interest rate is constant at $i$ per payment period (\textit{frequency})
+		      \item [2.] the payments are of equal amount (\textit{term of the annuity}: nthe number of payments)
+		      \item [3.] the payments are made at the end of each payment period
+		      \item [4.] either one of:
+		            \begin{itemize}
+			            \item the AV is valued at the time of (and including) the final payment: \[s_{\angl{n}i}:=\sum_{t=0}^{n-1}(1+i)^t=\frac{(1+i)^n-1}{i}\]
+			            \item the PV is valued one period before the first payment: \[a_{\angl{n}i}:=\sum_{t=1}^{n}v^t=\frac{1-v^n}{i}\]
+		            \end{itemize}
+		      \item Note: $s_{\angl{n}i}=(1+i)^na_{\angl{n}i}$ and $a_{\angl{n}i}=v^ns_{\angl{n}i}$
+	      \end{itemize}
+	\item Annuity-due: same as annuity-immedaite in the first three conditions, with modified condition 4:
+	      \begin{itemize}
+		      \item [4.] either one of:
+		            \begin{itemize}
+			            \item the AV is valued one period after the final payment
+			            \item the PV is valued at the time of the first payment
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
+\end{document}
