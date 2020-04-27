@@ -3,6 +3,9 @@
 \usepackage{setspace}
 \usepackage{relsize}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{forest}
 
 \title{Stats 100A Homework 2}
 \author{Jiaping Zeng}
@@ -13,17 +16,39 @@
 \maketitle
 
 \section*{Problem 1}
+The sequence of events can be visualized using the chart below:\\
+	\begin{forest}
+		[Any moment [Fire: $\alpha$ [Alarm: $\beta$] [No alarm]] [No fire [Alarm: $\gamma$] [No alarm]]]
+	\end{forest}\\
+By adding up the instances where alarm occurs, we can see that $P(\text{alarm})=\beta+\gamma$.\\
+In addition, $P(\text{fire\&alarm})=P(\text{fire})P(\text{alarm}|\text{fire})=\alpha\beta$.\\
+Then, $P(\text{fire}|\text{alarm})=\dfrac{P(\text{fire\&alarm})}{P(\text{alarm})}=\boxed{\dfrac{\alpha\beta}{\beta+\gamma}}$.\\
+Let $\alpha=1\%$, $\beta=98\%$ and $\gamma=5\%$. Then,\\
+$P(\text{alarm}|\text{fire})=\beta=0.98$\\
+$P(\text{fire}|\text{alarm})=\dfrac{\alpha\beta}{\beta+\gamma}=\dfrac{0.01*0.98}{0.98+0.05}=0.0095$\\
+The values are very different because the probablity of a fire is very low.
 
 \section*{Problem 2}
 \begin{enumerate}
-	\item
+	\item $P(X>4)=p(5)+p(6)=0.5$
+	\item $P(X=6|X>4)=\frac{0.3}{0.5}=0.6$
+	\item $\mathbb{E}(X)=\sum_x xp(x)=1*0.1+2*0.1+3*0.1+4*0.2+5*0.2+6*0.3=\boxed{4.2}$\\$\text{Var}(X)=\mathbb{E}[(X-\mathbb{E}(X))^2]=10.24*0.1+4.84*0.1+1.44*0.1+0.04*0.2+0.64*0.2+3.24*0.3=\boxed{2.76}$\\$\text{SD}(X)=\sqrt{\text{Var}(X)}=\sqrt{2.22}\approx\boxed{1.66}$
+	\item $\mathbb{E}(h(X))=\sum_x h(x)p(x)=-20*0.1-10*0.1+0*0.1+10*0.2+20*0.2+100*0.3=\boxed{33}$\\$\text{Var}(h(X))=\mathbb{E}[(h(X)-\mathbb{E}(h(X)))^2]=2809*0.1+1849*0.1+1089*0.1+529*0.2+169*0.2+4489*0.3=\boxed{2061}$\\$\text{SD}(h(X))=\sqrt{\text{Var}(h(X))}=\sqrt{2061}\approx\boxed{45.40}$\\The units of $\mathbb{E}(h(X))$ and $\text{Var}(h(X))$ are dollars and dollars-squared respectively.
 \end{enumerate}
 
 \section*{Problem 3}
+$\mathbb{E}(Z)=1*p+0*(1-p)=\boxed{p}$\\
+$\mathbb{E}(Z^2)=1^2*p+0^2*(1-p)=\boxed{p}$\\
+$\text{Var}(Z)=(1-p)^2*p+(0-p)^2*(1-p)=\boxed{-p^2+p}$
 
 \section*{Problem 4}
 \begin{enumerate}
-	\item 
+	\item $\mathlarger{\mathbb{E}(aX)=\sum_x axp(x)=a\sum_x xp(x)=aE(X)}$
+	\item $\mathlarger{\mathbb{E}(X+b)\sum_x (x+b)p(x)=\sum_x xp(x)+\sum_x bp(x)=\sum_x xp(x)+b\sum_x p(x)=\mathbb{E}(X)+b}$
+	\item $\text{Var}(aX)=\mathbb{E}[(aX-\mathbb{E}(aX))^2]=\mathbb{E}[(aX-a\mathbb{E}(X))^2]=\mathbb{E}[a^2(X-\mathbb{E}(X))^2]=a^2\mathbb{E}[(X-\mathbb{E}(X))^2]$\\$=a^2\text{Var}(X)$
+	\item $\text{Var}(X+b)=\mathbb{E}[(X+b-\mathbb{E}(X+b))^2]=\mathbb{E}[(X+b-\mathbb{E}(X)-b)^2]=\text{Var}(X)$
+	\item Let $\mu=\mathbb{E}(X)$ which is a constant term. Then, $\text{Var}(X)=\mathbb{E}[(X-\mu)^2]=\mathbb{E}(X^2-2\mu X+\mu^2)=\mathbb{E}(X^2)-2\mu \mathbb{E}(X)+\mu^2=\mathbb{E}(X^2)-\mu^2=\mathbb{E}(X^2)-\mathbb{E}(X)^2$
+	\item $\mathlarger{\mathbb{E}(Z)=\mathbb{E}(\frac{X-\mu}{\sigma})=\frac{\mathbb{E}(X-\mu)}{\sigma}=\frac{\mathbb{E}(X)-\mu}{\sigma}=\boxed{0}}$\\$\mathlarger{\text{Var}(Z)=\text{Var}(\frac{X-\mu}{\sigma})=\frac{\text{Var}(X-\mu)}{\sigma^2}=\frac{\text{Var}(X)}{\sigma^2}}=\boxed{1}$
 \end{enumerate}
 
 \end{document}
