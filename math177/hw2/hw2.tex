@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{actuarialangle}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{relsize}
+
+\title{Math 177 Homework 2}
+\date{4/27/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Section 2.1}
+\begin{itemize}
+	\item [2.] Let the refernce time point be the end of the 10th year. We can start by find the interest rate using the first payment option: $900s_{\angl{10}i}=1000a_{\angl{\infty}i}
+		      \implies 900*\dfrac{(1+i)^{10}-1}{i}=1000*\dfrac{1-v^{\infty}}{i} \implies i=0.0775839375$. We can then use $i$ to calculate $K$ as follows: $Ks_{\angl{5}i}*(1+i)^{10-5}=1000a_{\angl{\infty}i} \implies K*\dfrac{(1+i)^5-1}{i}*(1+i)^{5}=1000*\dfrac{1-v^{\infty}}{i} \implies \boxed{K=1519.42}$.
+	\item [4.] Smith makes his deposits over $(2034-2010+1)*12=300$ months and the accumulated account pays over $(2059-2035+1)*12=300$ months. Then we can setup the following equation with the refernce time being December 31, 2034: $1000s_{\angl{300}\frac{0.12}{12}}=Ya_{\angl{300}\frac{0.12}{12}} \implies \boxed{Y=19788.47}$.
+	\item [5.]
+	      \begin{itemize}
+		      \item [(i)] January 1, 2015: $100s_{\angl{7}\frac{0.09}{12}}=\boxed{715.95}$
+		      \item [(ii)] January 1, 2016: $100s_{\angl{19}\frac{0.09}{12}}=\boxed{2033.97}$
+		      \item [(iii)] February 1, 2017: $100[s_{\angl{19}\frac{0.09}{12}}*\left(1+\dfrac{0.105}{12}\right)^9*\left(1+\dfrac{0.12}{12}\right)^4+s_{\angl{9}\frac{0.105}{12}}*\left(1+\dfrac{0.12}{12}\right)^4+s_{\angl{4}\frac{0.12}{12}}]=\boxed{3665.12}$
+		      \item [(iv)] Interest on February 28, 2017: $3665.12*\frac{0.12}{12}=\boxed{36.65}$
+	      \end{itemize}
+	\item [6.] Using year 3n as the reference point, we can set up the following equation: $8000=98s_{\angl{n}i}(1+i)^{2n}+196s_{\angl{2n}i}$. We can then combine the previous equation with the given $(1+i)^n=2.0$ into a system of equations with two variables and two unknowns. Solving numerically results in $n=6.00$ and $\boxed{i=0.1225}$.
+	\item [8.] Since it is implied that $i=0.1$, $\mathlarger{\sum_{t=1}^{10} s_{\angl{t}0.1}=\sum_{t=1}^{10} \frac{1.10^t-1}{1.10}=10(\ddot{s}_{\angl{10}0.1}-10)}=\boxed{11S-100}$.
+	\item [9.] $I_t=is_{\angl{t-1}i}$. $\mathlarger{\sum_{t=1}^n I_t=\sum_{t=1}^n (1+t)^{t-1}-n}=s_{\angl{n}i}-n$. This relationship represents that interest is the difference between accumulated value and deposit.
+	\item [11.]
+	      \begin{itemize}
+		      \item [(a)] $(1+i)^n=\dfrac{s_{\angl{2n}i}}{s_{\angl{n}i}}-1=\dfrac{210}{70}-1=\boxed{2}$\\$s_{\angl{n}i}=\dfrac{(1+i)^n-1}{i}=\dfrac{1}{i} \implies i=\dfrac{1}{s_{\angl{n}i}}=\boxed{\dfrac{1}{70}}$\\$s_{\angl{3n}i}=s_{\angl{n}i}+s_{\angl{2n}i}(1+i)^n=70+210*2=\boxed{490}$
+		      \item [(b)] Let $u=(1+i)^n$. Then, $\dfrac{X}{Y}=\dfrac{s_{\angl{3n}i}}{s_{\angl{n}i}}=u^2+u+1 \implies u=\dfrac{-1+\sqrt{-3+\frac{4X}{Y}}}{2} \implies v^n=\dfrac{1}{u}=\boxed{\dfrac{2}{-1+\sqrt{-3+\frac{4X}{Y}}}}$
+		      \item [(c)] Let $w=1+i$. Then, $s_{\angl{n}i}=w^2s_{\angl{n-2}i}+w+1 \implies 48.99=36.34w^2+w+1 \implies w=1.135490 \implies \boxed{i=0.135490}$
+	      \end{itemize}
+	\item [12.] $s_{\angl{n}0.11}=\dfrac{1.11^n-1}{0.11} \implies 1.11^n=0.11s_{\angl{n}0.11}+1=15.08$; $AV=s_{\angl{n}0.11}+1.11^ns_{\angl{m}0.07}=\boxed{640.72}$
+	\item [17.] Annuity A: $X=55a_{\angl{20}i}$\\Annuity B: $X=30a_{\angl{10}i}+60v^{10}a_{\angl{10}i}+90v^{20}a_{\angl{10}i}$\\Solving numerically results in $i=0.0717734$ and $\boxed{X=574.72}$.
+\end{itemize}
+
+\section*{Section 2.2}
+\begin{itemize}
+	\item [1.] Monthly effective rate of interest: $j=(1+\frac{10\%}{2})^\frac{1}{6}-1=0.00816485$
+	      \begin{itemize}
+		      \item (a) $50000=Xa_{\angl{25*12}i} \implies \boxed{X=454.35}$
+		      \item (b) $50000=(454.35+100)a_{\angl{n}i} \implies n=167.84$. Then, $(X+100)a_{\angl{n}j}+Yv_j^{169}=50000 \implies \boxed{Y=290.30}$
+	      \end{itemize}
+	\item [4.] Quarterly effective rate of interest: $j=(1+7\%)^\frac{1}{4}-1=0.170585$; $450s_{\angl{40}i}(1+7\%)^5=Y\ddot{a}_{\angl{4}7\%} \implies \boxed{Y=9873.20}$
+	\item [5.] Let $j$ be the 4-year rate of interest. Then, $100\ddot{s}_{\angl{10}j}=500\ddot{s}_{\angl{5}j} \implies j=0.319508$. Then, $X=100\ddot{s}_{\angl{10}j}=\boxed{6194.72}$
+	\item [6.] $\ddot{a}_{\angl{\infty}{i}}=20 \implies i=\frac{1}{19}$. Then, $X=20*\dfrac{(1+\frac{1}{19})^4-1}{(1+\frac{1}{19})^4}=\boxed{3.709875}$
+	\item [7.] $Xs_{\angl{60}0.005}=10000*(1+\frac{7.45\%}{2})^{5*2} \implies X=206.616748$; $10000=Xa_{\angl{60}i^{(12)}} \implies i^{(12)}=0.00733377 \implies \boxed{i=0.0880052}$
+	\item [9.] Monthly effective rate of interest: $j=\frac{0.09}{12}=0.0075$\\Annual effective rate of interest: $i=(1+\frac{0.09}{12})^{12}-1=0.0938069$\\$100\ddot{s}_{\angl{12n}j}+1000s_{\angl{n}i}\geq 100000 \implies \boxed{n\geq 19}$
+	\item [12.] $1000=100a_{\angl{4}0.035}+v^4a_{\angl{8}i} \implies \boxed{i=0.0220788}$
+	\item [19.] $L=Pa_{\angl{n/2}i} \implies P=\dfrac{L}{a_{\angl{n}i}}+\dfrac{v^{\frac{n}{2}}L}{a_{\angl{n}i}}=K+v^{\frac{n}{2}}K\leq 2K$
+	\item [23.] $B-A=s_{\angl{n+1}i}-s_{\angl{n}i}=\dfrac{(1+i)^{1+n}-(1+i)^n}{i}=\dfrac{(1+i)^n(1+i-1)}{i}=(1-i)^n$\\$\implies i=\dfrac{(1+i)^n-1}{A}=\boxed{\dfrac{B-1}{A}-1}$\\$\implies B-A=(2-\dfrac{B-1}{A})^n \implies \boxed{n=\dfrac{B-A}{ln(2-\frac{B-1}{A})}}$
+\end{itemize}
+
+\section*{Section 2.3}
+\begin{itemize}
+	\item [1.] Annual effective rate of interest: $i=(1+\frac{6\%}{12})^{12}-1=0.0616778$; $PV=2000s_{\angl{12}\frac{6\%}{12}}\dfrac{1-\left(\frac{1.05}{1.0616778}\right)^{20}}{0.0616778-0.05}=\boxed{419253.25}$
+	\item [2.]
+	      \begin{itemize}
+		      \item (i) $1000*1.01^{29}*\dfrac{1-(\frac{0.99}{1.01})^{30}}{1-\frac{0.99}{1.01}}=\boxed{30407.43}$
+		      \item (ii) $1000*1.05^{29}*\dfrac{1-(\frac{0.99}{1.05})^{30}}{1-\frac{0.99}{1.05}}=\boxed{59704.03}$
+		      \item (iii) $1000*1.10^{29}*\dfrac{1-(\frac{0.99}{1.10})^{30}}{1-\frac{0.99}{1.10}}=\boxed{151906.38}$
+	      \end{itemize}
+	\item [4.] $167.50=10a_{\angl{4}{9.2\%}}+10v^4\frac{1}{9.2\%-0.01K} \implies \boxed{K=4}$
+	\item [5.] Monthly effective rate of interest: $j=(1+6\%)^\frac{1}{12}-1=0.00486755$; $100000=Rs_{\angl{12}j}\dfrac{1-\left(\frac{1.032}{1.06}\right)^{20}}{0.06-0.032} \implies \boxed{R=547.93}$
+	\item [11.] Sandy: $PV_{\text{Sandy}}=90a_{\angl{\infty}i}+10(Ia)_{\angl{\infty}i}=\frac{100}{i}+\frac{10}{i^2}$\\Danny: $PV_{\text{Danny}}=180\ddot{a}_{\angl{\infty}i}=\frac{180(i+1)}{i}$\\$PV_{\text{Sandy}}=PV_{\text{Danny}} \implies \frac{100}{i}+\frac{10}{i^2}=\frac{180(i+1)}{i} \implies \boxed{i=0.101720}$
+	\item [12.] Monthly effective rate of interest: $j=(1+\frac{9\%}{4})^{\frac{1}{3}}-1=0.00744444$; $X=2(Ia)_{\angl{60}j}=\boxed{2729.21}$
+	\item [18.] $PV_2 = 2PV_1 \implies 11a_{\angl{\infty}i}-(Da)_{\angl{10}i}=2(Da)_{\angl{10}i} \implies i=0.0930160$. Then, $\boxed{PV_1=39.40}$
+	\item [31a.] $PV=1+2v^k+3v^{2k}+... \implies v^kPV=v^k+2v^{2k}+3v^{3k}+...$. Then, $PV-v^kPV=1+v^k+v^{2k}+v^{3k}+...=\frac{1}{1-v^k} \implies PV=\frac{1}{(1-v^k)^2}=\frac{1}{(ia_{\angl{k}i})^2}$.
+\end{itemize}
+
+\end{document}

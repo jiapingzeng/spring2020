@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Stats 100A Midterm}
+\author{Jiaping Zeng}
+\date{5/2/2020}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Problem 1}
+
+Single coin flip:\\
+\begin{tabular}{|c|c|c|}
+	\hline
+	     & head & tail \\
+	\hline
+	x    & 1    & 0    \\
+	\hline
+	p(x) & 0.5  & 0.5  \\
+	\hline
+\end{tabular}\\
+
+\begin{flushleft}
+	$E(x)=\sum_x xp(x)=1*0.5+0*0.5=0.5$\\
+	$Var(x)=E[(X-\mu)^2]=(1-0.5)^2*0.5+(0-0.5)^2*0.5=0.25$\\
+\end{flushleft}
+\begin{flushleft}
+	100 flips:\\
+	$E(X)=100E(x)=\boxed{50}$\\
+	$Var(X)=100Var(x)=\boxed{25}$\\
+	$SD(X)=\sqrt{Var(X)}=\sqrt{25}=\boxed{5}$\\
+	$E(X/100)=\frac{E(X)}{100}=\frac{50}{100}=\boxed{0.5}$\\
+	$Var(X/100)=\frac{Var(X)}{100^2}=\frac{25}{100^2}=\boxed{0.0025}$\\
+	$SD(X/100)=\sqrt{Var(X/100)}=\sqrt{0.25}=\boxed{0.05}$\\
+	$P(X\in[40,60])=\boxed{\dfrac{\sum_{x=40}^{60}\begin{pmatrix}100\\x\end{pmatrix}}{2^{100}}}$
+\end{flushleft}
+
+\section*{Problem 2}
+Single voter:\\
+\begin{tabular}{|c|c|c|}
+	\hline
+	     & A   & Not A \\
+	\hline
+	x    & 1   & 0     \\
+	\hline
+	p(x) & 0.2 & 0.8   \\
+	\hline
+\end{tabular}\\
+
+\begin{flushleft}
+	$E(x)=\sum_x xp(x)=1*0.2+0*0.8=0.2$\\
+	$Var(x)=E[(x-\mu)^2]=(1-0.2)^2*0.2+(0-0.2)^2*0.8=0.16$\\
+\end{flushleft}
+
+\begin{flushleft}
+	100 Voters:\\
+	Distribution: $\boxed{binom(n=100, p=0.2)}$\\
+	$E(X)=100*E(x)=\boxed{20}$\\
+	$Var(X)=100*Var(x)=\boxed{16}$\\
+	$SD(X)=\sqrt{Var(X)}=\sqrt{16}=\boxed{4}$\\
+	$E(X/100)=\frac{E(X)}{100}=\frac{20}{100}=\boxed{0.2}$\\
+	$Var(X/100)=\frac{Var(X)}{100^2}=\frac{16}{100^2}=\boxed{0.0016}$\\
+	$SD(X/100)=\sqrt{Var(X/100)}=\sqrt{0.0016}=\boxed{0.04}$\\
+\end{flushleft}
+
+\section*{Problem 3}
+\begin{flushleft}
+	Single throw:\\
+	\begin{tabular}{|c|c|c|}
+		\hline
+		     & In A               & Not in A             \\
+		\hline
+		x    & 1                  & 0                    \\
+		\hline
+		p(x) & $\frac{4m}{10000}$ & $1-\frac{4m}{10000}$ \\
+		\hline
+	\end{tabular}\\
+
+	\begin{flushleft}
+		$\mathlarger{E(x)=\sum_x xp(x)=1*\frac{4m}{10000}+0*(1-\frac{4m}{10000})=\frac{4m}{10000}}$\\
+		$\mathlarger{Var(x)=E[(\hat{\pi}-\mu)^2]=(1-\frac{4m}{10000})^2*{\frac{4m}{10000}}+(0-\frac{4m}{10000})^2*(1-\frac{4m}{10000})=\frac{-m^2+2500m}{6250000}}$\\
+		Distribution: $\boxed{binom(n=10000 ,p=\frac{\pi}{4})}$\\
+		$\mathlarger{E(\hat{\pi})=10000*E(x)=\boxed{4m}}$\\
+		$\mathlarger{Var(\hat{\pi})=10000*Var(x)=\boxed{\frac{-m^2+2500m}{625}}}$\\
+		$SD(\hat{\pi})=\sqrt{Var(\hat{\pi})}=\boxed{\frac{\sqrt{-m^2+2500m}}{25}}$\\
+	\end{flushleft}
+\end{flushleft}
+
+
+\end{document}
