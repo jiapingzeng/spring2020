@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{actuarialangle}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{relsize}
+
+\title{Math 177 Homework 3}
+\date{5/5/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Section 3.1}
+\begin{itemize}
+	\item [1.]
+	      \begin{itemize}
+		      \item [(i)] $L=1000a_{\angl{5}10\%}+500v^5a_{\angl{5}10\%}=\boxed{4967.68}$
+		      \item [(ii)] $B_3=L(1+10\%)^3-1000s_{\angl{3}10\%}=\boxed{3301.98}$
+		      \item [(iii)] $I_4=B_3*10\%=\boxed{330.20}$\\$P_4=1000-I_4=\boxed{669.80}$
+		      \item [(iv)] $B_8=500_{\angl{2}10\%}=\boxed{867.77}$
+	      \end{itemize}
+	\item [2.] $v=\frac{1}{1+\frac{9\%}{12}}$; $B_{40}=\sum_{n=1}^{20} 1000v^n(1-2\%)^{39+n}=\boxed{6889.11}$
+	\item [4.]
+	      \begin{itemize}
+		      \item [(i)] Let $X$ be the monthly payment amount. Then $20000=X(12+a_{\angl{36}\frac{6\%}{12}}) \implies \boxed{X=445.72}$\\$B_1=20000-12X=\boxed{14651.36}$
+		      \item [(ii)] $20000=X(a_{\angl{12}\frac{3\%}{12}}+v_{\frac{3\%}{12}}^{12}a_{\angl{36}\frac{5\%}{12}}) \implies \boxed{X=452.61}$\\$B_1=20000(1+\frac{3\%}{12})^{12}-Xs_{\angl{12}\frac{3\%}{12}}=\boxed{15101.68}$
+	      \end{itemize}
+	\item [5.] Bank Y monthly interest: $(1+i)^6=1+\frac{14\%}{2} \implies i=0.0113403$; $P_t=\frac{19800}{36}=550 \implies I_t=iB_{t-1}=\frac{12\%}{12}[19800-(t-1)P_t]\implies Price=P_ta_{\angl{20}i}+\sum_{n=16}^{36}(v_i^{n-16}I_n)=\boxed{10857.27}$
+	\item [6.] $L=\sum_{i=1}^nP_n=\sum_{i=1}^n(K_n-I_n)=K_T-I_T$
+	\item [9.] $B_{10}=L=1000$\\$B_{20}=B_{10}(1-5\%)^{10}=598.74$\\$Xa_{\angl{10}10\%}=B_{20} \implies \boxed{X=97.44}$
+	\item [11.]
+	      \begin{itemize}
+		      \item [(a)]
+		      \item [(b)]
+		      \item [(c)]
+	      \end{itemize}
+	\item [13.]
+	      \begin{itemize}
+		      \item [(a)] $P_6=K_6-I_6=500-(1000a_{\angl{10}i}-a_{\angl{1}i})i=500(1-2a_{\angl{10}i}i+vi)=500[-2(1-v^{10})-(1-vi)]=500(2v^{10}-v)$
+		      \item [(b)] $P_6=K_6-I_6=500-(1000a_{\angl{10}i}-a_{\angl{1}i})i=500(1-2a_{\angl{10}i}i+vi)=500[1-i(2a_{\angl{10}i}-v)]$
+		      \item [(c)] $P_6=P_1(1+i)^5=(500-Li)(1+i)^5$
+	      \end{itemize}
+\end{itemize}
+
+\section*{Section 3.2}
+\begin{itemize}
+	\item [1.] $B_t=L(1+t)^t-Ks_{\angl{t}i}=Ka_{\angl{n}i}(1+i)^t-Ks_{\angl{t}i}=(Ks_{\angl{t}i}+Ka_{\angl{n-t}i})-Ks_{\angl{t}i}=Ka_{\angl{n-t}i}$\\$B_t=L(1+t)^t-Ks_{\angl{t}i}=L+Lis_{\angl{t}i}-Ks_{\angl{t}i}=L+s_{\angl{t}i}(Li-K)=L+P_1s_{\angl{t}i}$
+	\item [4.] Let $X$ be the monthly payment amount. Then $L=Xa_{\angl{60}0.01}$ and $B_t=Xa_{\angl{60-t}0.01}$. $B_t=\frac{L}{2} \implies \boxed{t=34.41}$.
+	\item [7.] $X(1+6\%)^{10}-X=\frac{10X}{a_{\angl{10}6\%}}-X+356.54 \implies \boxed{X=825.00}$
+	\item [8.] Under option (i), let $X$ be the annual payment amount. Then, $Xa_{\angl{10}8.07\%}=2000 \implies X=299.00$. Then, under option (ii), $\sum_{n=0}^9 200+200(10-n)i)=10X \implies 11000i+2000=2990 \implies \boxed{i=0.09}$
+	\item [11.] Let $t-1,t,t+1$ be the dates of the given consecutive payments. Then, $P_t=B_t-B_{t-1}=5190.72-5084.68=106.04$ and $P_{t+1}=B_{t+1}-B_t=5084.68-4973.66=111.02$. Then, $i=\frac{P_{t+1}}{P_t}-1=0.0469634 \implies I_t=iB_{t-1}=243.77 \implies K=P_t+I_t=\boxed{349.81}$
+	\item [13.]
+	\item [14.] $A=125000a_{\angl{5}5\%}=\boxed{541184.58}$\\$B=75000a_{\angl{5}5\%}=\boxed{324710.75}$\\$C=10000(Da)_{\angl{5}5\%}=\boxed{134104.67}$\\$A+B+C=541184.58+324710.75+134104.67=1000000$
+	\item [15.]
+	\item [16.]
+	      \begin{itemize}
+		      \item [(a)]
+		      \item [(b)]
+	      \end{itemize}
+	\item [17.] $B_n=\frac{3}{4}L \implies a_{\angl{n}i}=\frac{3}{4}a_{\angl{2n}i} \implies v^n-1=\frac{3}{4}v^{2n}-\frac{3}{4} \implies v^n=\frac{1}{3} \implies \boxed{I_{n+1}=\frac{2}{3}K}$
+	\item [26.]
+	\item [29.]
+	      \begin{itemize}
+		      \item [(a)] $K_1v+K_2v^2+...K_nv^n=\frac{1+i}{1+i}+\frac{(1+i)^2}{(1+i)^2}+...+\frac{(1+i)^n}{(1+i)^n}=n$
+		      \item [(b)] $B_t=K_{t+1}v+K_{t+2}v^2+...+K_nv^{n-t}=\frac{(1+i)^{t+1}}{(1+i)}+\frac{(1+i)^{t+2}}{(1+i)^2}+...+\frac{(1+i)^n}{(1+i)^{n-t}}=(n-t)(1+i)^t$
+	      \end{itemize}
+\end{itemize}
+\end{document}
