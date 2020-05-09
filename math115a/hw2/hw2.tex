@@ -17,9 +17,11 @@
 	\item [2.] Let $V$ be a finite dimensional vector space and $W$ a subspace. Show that $V$ and $W \times V/W$ are isomorphic by finding an explicit isomorphism.
 	\item [5.] A differential operator on $\mathbb{R}_n[x]$ is a linear combination of expressions of the form $x^a\frac{d^b}{dx^b}$ where $a-b \leq 0$ and $b \leq n$. We can consider a differential operator as a linear map $\mathbb{R}_n[x]\rightarrow\mathbb{R}_n[x]$.
 	      \begin{itemize}
-		      \item [(a)] Let $D:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ be the differential operator given by $2-4\frac{d}{dx}+2x\frac{d^2}{dx^2}$. Find the matrix of $D$ relative to the basis $\{x^2, (x-1)^2, (x+1)^2\}$.
+		      \item [(a)] Let $D:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ be the differential operator given by $2-4\frac{d}{dx}+2x\frac{d^2}{dx^2}$. Find the matrix of $D$ relative to the basis $\{x^2, (x-1)^2, (x+1)^2\}$.\\
+			  \textbf{Answer: } Define bases of $\mathbb{R}_2[x]$ $\beta=\{1,x,x^2\}$ and $\gamma=\{x^2,(x-1)^2,(x+1)^2\}$. Then, by transforming each vector of $\beta$ and writing the results as linear combinations of vectors in $\gamma$, we have \[D(1)=2=-2(x^2)+1(x-1)^2+1(x+1)^2\]\[D(x)=2x-4=4(x^2)-\frac{5}{2}(x-1)^2-\frac{3}{2}(x+1)^2\]\[D(x^2)=2x^2-4x=2(x^2)+1(x-1)^2-1(x+1)^2\]Hence, \[[D]_{\beta}^{\gamma}=\begin{pmatrix}-2&4&2\\1&-\frac{5}{2}&1\\1&-\frac{3}{2}&-1\end{pmatrix}\].
 		      \item [(b)] Does the differential equation $2f-4\frac{df}{dx}+2x\frac{d^2f}{dx^2}=0$ have any solutions $f \in \mathbb{R}_2[x]$?
-		      \item [(c)] Suppose $E:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ is a differential operator and that the matrix of $E$, relative to the basis $\{1,x,x^2\}$ is \[\begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}.\]\\Find $E$.
+		      \item [(c)] Suppose $E:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ is a differential operator and that the matrix of $E$, relative to the basis $\{1,x,x^2\}$ is \[\begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}.\]\\Find $E$.\\
+		      \textbf{Answer: } The above matrix translates to the following equations: \[E(1)=0\]\[E(x)=1\]\[E(x^2)=x\] Then, $E(p)=\frac{dp}{dx}-x\frac{d^2p}{dx^2}$ satisfies all three equations above.
 	      \end{itemize}
 	\item [6.] Consider the linear map $X:\mathbb{R}_n[x]\rightarrow\mathbb{R}_n[x]$ given by $X(p)=\frac{dp}{dx}+\frac{x^n}{n!}p(0)$. Calculate the dimension of \[C(X)=\{T\in Hom(\mathbb{R}_n[x],\mathbb{R}_n[x])\mid T\circ X=X\circ T\}.\]
 \end{itemize}
