@@ -14,16 +14,50 @@
 \maketitle
 
 \begin{itemize}
-	\item [2.] Let $V$ be a finite dimensional vector space and $W$ a subspace. Show that $V$ and $W \times V/W$ are isomorphic by finding an explicit isomorphism.
+	\item [2.] Let $V$ be a finite dimensional vector space and $W$ a subspace. Show that $V$ and $W\times V/W$ are isomorphic by finding an explicit isomorphism.\\
+	      \textbf{Answer: } By definitions of products and quotients of vector spaces, $W\times V/W=\{(w,v)+W\mid v\in V, w\in W\}$. Let $x,y\in V$, $p,q\in W$, $w\in W\times V/W$ and $a,b\in \mathbb{F}$. Note that $(p,x)+W=(0,x)+W$ since $p\in W$. Then, define $T(x)=(0,x)+W$ and $T^{-1}((w,x)+W)=x$.\\We can verify that $T$ is linear as follows: $T(ax+y)=(0,ax+y)+W=[(0,ax)+W]+[(0,y)+W]=a[(0,x)+W]+[(0,y)+W]=aT(x)+T(y)$.\\Similarly, $T^{-1}$ is also linear: $T^{-1}(b((p,x)+W)+((q,y)+W))=T^{-1}(b((0,x)+W)+((0,y)+W))=T^{-1}((0,bx+y)+W)=bx+y=bT^{-1}((p,x)+W)+T^{-1}((q,y)+W)$.\\Therefore $T$ is invertible and $V$ is isomorphic to $W\times V/W$.
 	\item [5.] A differential operator on $\mathbb{R}_n[x]$ is a linear combination of expressions of the form $x^a\frac{d^b}{dx^b}$ where $a-b \leq 0$ and $b \leq n$. We can consider a differential operator as a linear map $\mathbb{R}_n[x]\rightarrow\mathbb{R}_n[x]$.
 	      \begin{itemize}
 		      \item [(a)] Let $D:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ be the differential operator given by $2-4\frac{d}{dx}+2x\frac{d^2}{dx^2}$. Find the matrix of $D$ relative to the basis $\{x^2, (x-1)^2, (x+1)^2\}$.\\
-			  \textbf{Answer: } Define bases of $\mathbb{R}_2[x]$ $\beta=\{1,x,x^2\}$ and $\gamma=\{x^2,(x-1)^2,(x+1)^2\}$. Then, by transforming each vector of $\beta$ and writing the results as linear combinations of vectors in $\gamma$, we have \[D(1)=2=-2(x^2)+1(x-1)^2+1(x+1)^2\]\[D(x)=2x-4=4(x^2)-\frac{5}{2}(x-1)^2-\frac{3}{2}(x+1)^2\]\[D(x^2)=2x^2-4x=2(x^2)+1(x-1)^2-1(x+1)^2\]Hence, \[[D]_{\beta}^{\gamma}=\begin{pmatrix}-2&4&2\\1&-\frac{5}{2}&1\\1&-\frac{3}{2}&-1\end{pmatrix}\].
-		      \item [(b)] Does the differential equation $2f-4\frac{df}{dx}+2x\frac{d^2f}{dx^2}=0$ have any solutions $f \in \mathbb{R}_2[x]$?
+		            \textbf{Answer: } Define bases of $\mathbb{R}_2[x]$ $\beta=\{1,x,x^2\}$ and $\gamma=\{x^2,(x-1)^2,(x+1)^2\}$. Then, by transforming each vector of $\beta$ and writing the results as linear combinations of vectors in $\gamma$, we have \[D(1)=2=-2(x^2)+1(x-1)^2+1(x+1)^2\]\[D(x)=2x-4=4(x^2)-\frac{5}{2}(x-1)^2-\frac{3}{2}(x+1)^2\]\[D(x^2)=2x^2-4x=2(x^2)+1(x-1)^2-1(x+1)^2\]Hence, \[[D]_{\beta}^{\gamma}=\begin{pmatrix}-2&4&2\\1&-\frac{5}{2}&1\\1&-\frac{3}{2}&-1\end{pmatrix}.\]
+		      \item [(b)] Does the differential equation $2f-4\frac{df}{dx}+2x\frac{d^2f}{dx^2}=0$ have any solutions $f \in \mathbb{R}_2[x]$?\\
+		            \textbf{Answer: } Suppose $f=a+bx+cx^2$ is a solution. Then, $a,b,c$ must be not all zero and satisfies the following: \[\begin{pmatrix}-2&4&2\\1&-\frac{5}{2}&1\\1&-\frac{3}{2}&-1\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}\]Then, using Gaussian Elimination, we see that $a=b=c=0$. Therefore, the differential equation does not have any solution in $\mathbb{R}_2[x]$.
 		      \item [(c)] Suppose $E:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ is a differential operator and that the matrix of $E$, relative to the basis $\{1,x,x^2\}$ is \[\begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix}.\]\\Find $E$.\\
-		      \textbf{Answer: } The above matrix translates to the following equations: \[E(1)=0\]\[E(x)=1\]\[E(x^2)=x\] Then, $E(p)=\frac{dp}{dx}-x\frac{d^2p}{dx^2}$ satisfies all three equations above.
+		            \textbf{Answer: } The above matrix translates to the following equations: \[E(1)=0\]\[E(x)=1\]\[E(x^2)=x\] Then, $E(p)=\frac{dp}{dx}-x\frac{d^2p}{dx^2}$ satisfies all three equations above.
 	      \end{itemize}
 	\item [6.] Consider the linear map $X:\mathbb{R}_n[x]\rightarrow\mathbb{R}_n[x]$ given by $X(p)=\frac{dp}{dx}+\frac{x^n}{n!}p(0)$. Calculate the dimension of \[C(X)=\{T\in Hom(\mathbb{R}_n[x],\mathbb{R}_n[x])\mid T\circ X=X\circ T\}.\]
+	      \textbf{Answer: } We can start by exploring the first few cases of $n$.\\
+	      $\boxed{n=1}$: $X_1(p)=\frac{dp}{dx}+xp(0)$. Let basis $\beta_1=\{1,\frac{x}{1!}\}$. Then, $X_1(1)=x=1(\frac{x}{1!})$ and $X_1(\frac{x}{1!})=1$. The matrix of $X_1$ is \[[X_1]_{\beta_1}^{\beta_1}=\begin{pmatrix}0&1\\1&0\end{pmatrix}.\]Then,\[C(X_1)=T\in\{\text{Hom}(\mathbb{R}_1[x],\mathbb{R}_1[x])\mid T\circ X_1=X_1\circ T\}.\]Substituting in $T$ and $X_1$ results in the following matrix multiplication equation: \[\begin{pmatrix}t_{11}&t_{12}\\t_{21}&t_{22}\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}t_{11}&t_{12}\\t_{21}&t_{22}\end{pmatrix}\]\[\implies\begin{pmatrix}t_{12}&t_{11}\\t_{22}&t_{21}\end{pmatrix}=\begin{pmatrix}t_{21}&t_{22}\\t_{11}&t_{12}\end{pmatrix}\]\[\implies t_{11}=t_{22}\text{, }t_{12}=t_{21}\] which means that\[C(X_1)=\{\begin{pmatrix}t_{11}&t_{12}\\t_{12}&t_{11}\end{pmatrix}\}\implies \text{dim}(C(X_1))=2.\]
+	      $\boxed{n=2}$: $X_2(p)=\frac{dp}{dx}+\frac{x^2}{2!}p(0)$. Let basis $\beta_2=\{1,\frac{x}{1!},\frac{x^2}{2!}\}$. Then, $X_2(1)=\frac{x^2}{2!}$, $X_2(\frac{x}{1!})=1$ and $X_2(\frac{x^2}{2!})=\frac{x}{1!}$. The matrix of $X_2$ is \[[X_2]_{\beta_2}^{\beta_2}=\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}.\]Then,\[C(X_2)=T\in\{\text{Hom}(\mathbb{R}_2[x],\mathbb{R}_2[x])\mid T\circ X_2=X_2\circ T\}.\]Substituting in $T$ and $X_2$ results in the following matrix multiplication equation: \[\begin{pmatrix}t_{11}&t_{12}&t_{13}\\t_{21}&t_{22}&t_{23}\\t_{31}&t_{32}&t_{33}\end{pmatrix}\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}=\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}\begin{pmatrix}t_{11}&t_{12}&t_{13}\\t_{21}&t_{22}&t_{23}\\t_{31}&t_{32}&t_{33}\end{pmatrix}\]\[\implies\begin{pmatrix}t_{13}&t_{11}&t_{12}\\t_{23}&t_{21}&t_{22}\\t_{33}&t_{31}&t_{32}\end{pmatrix}=\begin{pmatrix}t_{21}&t_{22}&t_{23}\\t_{31}&t_{32}&t_{33}\\t_{11}&t_{12}&t_{13}\end{pmatrix}\]\[\implies t_{11}=t_{22}=t_{33}\text{, }t_{12}=t_{23}=t_{31}\text{, }t_{13}=t_{21}=t_{32}\] which means that\[C(X_1)=\{\begin{pmatrix}t_{11}&t_{12}&t_{13}\\t_{13}&t_{11}&t_{12}\\t_{12}&t_{13}&t_{11}\end{pmatrix}\}\implies \text{dim}(C(X_2))=3.\]
+	      $\boxed{n=3}$: Using the same approach as above, we get $\text{dim}(C(X_3))=4$.\\
+	      From the above cases, it seems that $\text{dim}(C(X_n))=n+1$. To show this for a general $n$, we start by noticing the pattern \[[X_n]_{\beta_n}^{\beta_n}=\begin{pmatrix}e_{n+1}&e_1&...&e_n\end{pmatrix}.\]This is verifiable by applying $X$ to each vector of $\beta_n=\{1,\frac{x}{1!},\frac{x^2}{2!},\ldots,\frac{x^n}{n!}\}$, resulting in $\{\frac{x^n}{n!},1,...,\frac{x^{n-1}}{(n-1)!}\}$. Then, the matrix multiplication $[T][X]$ essentially shifts every column in $[T]$ to the right by one column. Similarly, the matrix multiplication $[X][T]$ shifts every row in $[T]$ up by one row. The relationship $T\circ X=X\circ T$, equivalently, the equation $[T][X]=[X][T]$, can be shown below:
+	      \[
+		      \begin{pmatrix}
+			      t_{1,n+1}   & t_{1,1}   & \ldots & t_{1,n}   \\
+			      t_{2,n+1}   & t_{2,1}   & \ldots & t_{2,n}   \\
+			      \vdots      & \ddots    & \ddots & \vdots    \\
+			      t_{n+1,n+1} & t_{n+1,1} & \ldots & t_{n+1,n}
+		      \end{pmatrix}=
+		      \begin{pmatrix}
+			      t_{2,1}   & t_{2,2}   & \ldots & t_{2,n+1}   \\
+			      \vdots    & \ddots    & \ddots & \vdots      \\
+			      t_{n+1,1} & t_{n+1,2} & \ldots & t_{n+1,n+1} \\
+			      t_{1,1}   & t_{1,2}   & \ldots & t_{1,n+1}
+		      \end{pmatrix}
+	      \]
+	      By matching entry positions, we get the equations $t_{11}=t_{22}=\ldots=t_{n+1,n+1}$, $t_{12}=t_{23}=\ldots=t_{n,n+1}=t_{n+1,1}$, etc. In other words, each entry of $[T]$ is equivalent to the entry one row down and one column to the right from it. Note that for entries in the $(n+1)$-th column, "one column to the right" refers to the 1st column; similarly, for entries in the $(n+1)$-th row, "one column down" refers to the 1st row. Then, $C(X_n)$ can be written as
+	      \[
+		      C(X_n)=\{
+		      \begin{pmatrix}
+			      t_{1,1}   & t_{1,2} & \ldots & t_{1,n}   & t_{1,n+1} \\
+			      t_{1,n+1} & t_{1,1} & \ldots & t_{1,n-1} & t_{1,n}   \\
+			      \vdots    & \ddots  & \ddots & \ddots    & \vdots    \\
+			      t_{1,3}   & t_{1,4} & \ldots & t_{1,1}   & t_{1,2}   \\
+			      t_{1,2}   & t_{1,3} & \ldots & t_{1,n+1} & t_{1,1}
+		      \end{pmatrix}
+		      \}
+	      \]
+	      which indeed has dimension $n+1$.
 \end{itemize}
 
 \end{document}
