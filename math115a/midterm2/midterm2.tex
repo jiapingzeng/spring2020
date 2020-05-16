@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Math 115A Midterm 2}
+\author{Jiaping Zeng}
+\date{5/16/2020}
+
+\begin{document}
+\setstretch{1.35}
+\begin{itemize}
+    \item [1.]
+          \begin{itemize}
+              \item [(a)]
+              \item [(b)] A diagonalisable linear map $T$ that is not an isomorphism means that $[T]_\beta$ is a diagonal matrix for some basis $\beta$ with a nonzero nullity. For example, let $T:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ such that $T(p)=x\frac{dp}{dx}$. In addition, let $\beta=\{1,x,x^2\}$ be an ordered basis of $\mathbb{R}_2[x]$. Then, 
+              \[[T]_\beta^\beta=\begin{pmatrix}0&0&0\\0&1&0\\0&0&2\end{pmatrix}\] which we can see is indeed diagonal. Thus, $T$ is diagonalisable. At the same time, $T$ is not injective, and therefore not an isomorphism, as its kernel contains the set of all constants.
+          \end{itemize}
+\end{itemize}
+\newpage
+\begin{itemize}
+    \item [2.] Since vectors in $V$ has the form $\begin{pmatrix}a&b\\c&-a\end{pmatrix}$, $\beta=\{\begin{pmatrix}1&0\\0&-1\end{pmatrix},\begin{pmatrix}0&1\\0&0\end{pmatrix},\begin{pmatrix}0&0\\1&0\end{pmatrix}\}$ is a basis of $V$. We can then apply $T$ to each element of $\beta$ to find $[T]_\beta^\beta$: \[T(\begin{pmatrix}1&0\\0&-1\end{pmatrix})=\begin{pmatrix}0&0\\0&0\end{pmatrix}\]\[T(\begin{pmatrix}0&1\\0&0\end{pmatrix})=\begin{pmatrix}0&2\\0&0\end{pmatrix}\]\[T(\begin{pmatrix}0&0\\1&0\end{pmatrix})=\begin{pmatrix}0&0\\-2&0\end{pmatrix}\] Then, \[[T]_\beta^\beta=\begin{pmatrix}0&0&0\\0&2&0\\0&0&-2\end{pmatrix}.\]
+          \begin{itemize}
+              \item [(a)] The characteristic polynomial can be found as follows: $P_T(\lambda)=\text{det}(T-\lambda I)=-\lambda(2-\lambda)(-2-\lambda)=-\lambda^3+4\lambda$. Then, we can find the eigenvalues by solving $P_T(\lambda)=0$, which results in $\lambda=-2,0,2$.
+              \item [(b)] We can find the eigenvectors by solving $(T-\lambda I)v=0$ for each $\lambda$.\\$\lambda_1=-2$:\[\begin{pmatrix}2&0&0\\0&4&0\\0&0&0\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=0\]\[\implies a=b=0\]Then $v_1=\begin{pmatrix}0\\0\\1\end{pmatrix}$ is an eigenvector, which corresponds to the matrix $\begin{pmatrix}0&0\\1&0\end{pmatrix}$.\\$\lambda_2=0$:\[\begin{pmatrix}0&0&0\\0&2&0\\0&0&-2\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=0\]\[\implies b=c=0\]Then $v_2=\begin{pmatrix}1\\0\\0\end{pmatrix}$ is an eigenvector, which corresponds to the matrix $\begin{pmatrix}1&0\\0&-1\end{pmatrix}$.\\$\lambda_3=2$:\[\begin{pmatrix}-2&0&0\\0&0&0\\0&0&-4\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=0\]\[\implies a=c=0\]Then $v_3=\begin{pmatrix}0\\1\\0\end{pmatrix}$ is an eigenvector, which corresponds to the matrix $\begin{pmatrix}0&1\\0&0\end{pmatrix}$.
+              \item [(c)] Since $[T]_\beta^\beta$ is a diagonal matrix as shown above, $T$ is diagonalisable.
+          \end{itemize}
+\end{itemize}
+\newpage
+\begin{itemize}
+    \item [3.]
+          \begin{itemize}
+              \item [(a)]
+              \item [(b)]
+          \end{itemize}
+\end{itemize}
+\end{document}
