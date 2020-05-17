@@ -13,9 +13,13 @@
 \begin{itemize}
     \item [1.]
           \begin{itemize}
-              \item [(a)]
-              \item [(b)] A diagonalisable linear map $T$ that is not an isomorphism means that $[T]_\beta$ is a diagonal matrix for some basis $\beta$ with a nonzero nullity. For example, let $T:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ such that $T(p)=x\frac{dp}{dx}$. In addition, let $\beta=\{1,x,x^2\}$ be an ordered basis of $\mathbb{R}_2[x]$. Then, 
-              \[[T]_\beta^\beta=\begin{pmatrix}0&0&0\\0&1&0\\0&0&2\end{pmatrix}\] which we can see is indeed diagonal. Thus, $T$ is diagonalisable. At the same time, $T$ is not injective, and therefore not an isomorphism, as its kernel contains the set of all constants.
+              \item [(a)] To be proved: $T$ is an isomorphism $\Leftrightarrow$ $T(B)$ is a basis for $W$.
+              \begin{itemize}
+                  \item [$\Rightarrow:$] Since $T$ is injective and $B$ is linearly independent, $T(B)$ is also linearly independent. Let $\text{dim}(V)=n$, then $B$ has $n$ elements by definition of dimension. Since $T$ is an isomorphism, $\text{dim}(V)=\text{dim}(W)=n$. Then, $T(B)$ is a set of $n$ linearly independent elements in the $n$-dimensional space $W$ which means that it is indeed a basis of $W$.
+                  \item [$\Leftarrow:$] Again let $\text{dim(V)}=n$, then both $B$ and $T(B)$ have exactly $n$ elements. Since $T(B)$ is a basis of $W$, $\text{dim}(W)=n=\text{rank}(T)$ and therefore $T$ is surjective. Then, by rank-nullity theorem, $\text{nullity}(T)=\text{dim}(W)-\text{rank}(T)=0$ which implies that $T$ is also injective. Thus $T$ is an isomorphism.
+              \end{itemize}
+              \item [(b)] A diagonalisable isomorphism $T$ means that $[T]_\beta$ is a diagonal matrix for some basis $\beta$ with a nonzero nullity. For example, let $T:\mathbb{R}_2[x]\rightarrow\mathbb{R}_2[x]$ such that $T(p)=x\frac{dp}{dx}$. In addition, let $\beta=\{1,x,x^2\}$ be an ordered basis of $\mathbb{R}_2[x]$. Then, 
+              \[[T]_\beta^\beta=\begin{pmatrix}0&0&0\\0&1&0\\0&0&2\end{pmatrix}\] which we can see is indeed diagonal. Thus, $T$ is diagonalisable. At the same time, $T$ is not injective, and therefore not an isomorphism, as its non-empty kernel contains the set of all constants.
           \end{itemize}
 \end{itemize}
 \newpage
@@ -31,8 +35,8 @@
 \begin{itemize}
     \item [3.]
           \begin{itemize}
-              \item [(a)]
-              \item [(b)]
+              \item [(a)] If $0$ is an eigenvalue of $T$, we know that its corresponding eigenspace $E_0\neq\{0\}$. By definition of eigenspace, $E_0=\text{ker}(T-0I)=\text{ker}(T)$. Therefore $\text{ker}(T)\neq\{0\}$ which means that $T$ is not injective and therefore not an isomorphism.
+              \item [(b)] If $0$ is not an eigenvalue of $T$, $\text{det}(T-0I)=\text{det(T)}\neq 0$. Then, $T$ is full rank, i.e. $\text{rank}(T)=\text{dim}(V)$ and $T$ is surjective. Since $T$ is a map from $V$ to itself, $\text{nullity(T)}=\text{dim}(V)-\text{rank}(T)=0$ by rank-nullity theorem and $T$ is injective. Therefore $T$ is indeed an isomorphism.
           \end{itemize}
 \end{itemize}
 \end{document}
