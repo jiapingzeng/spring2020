@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Stats 100A Homework 3}
+\author{Jiaping Zeng}
+\date{5/18/2020}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Problem 1}
+\begin{itemize}
+	\item [(a)] $E(Y)=E(aX+b)=\sum_x (ax+b)p(x)=a\sum_x xp(x)+b\sum_x p(x)=aE(X)+b$\\$Var(Y)=E[(Y-E(Y))^2]=E[((aX+b)-E(aX+b))^2]=E[(aX+b-aE(X)-b))^2]=E[(a(X-E(X)))^2]=a^2E[(X-E(X))^2]=a^2Var(X)$
+	\item [(b)] $P(X\in(x,x+\Delta x))=P(Y\in(y,y+\Delta y)) \implies f(x)\Delta x=g(y)\Delta y\implies g(y)=f(x)\frac{\Delta x}{\Delta y}=\boxed{\frac{f(\frac{y-b}{a})}{a}}$
+\end{itemize}
+
+\section*{Problem 2}
+\begin{itemize}
+	\item [(a)] $f(u)=\begin{cases}1&u\in[0,1]\\0&u\notin[0,1]\end{cases}$\\$E(U)=\int_0^1 uf(u)du=\boxed{\frac{1}{2}}$\\$Var(U)=E(U^2)-E(U)^2=\int_0^1 u^2f(u)du-(\int_0^1 uf(u)du)^2=\boxed{\frac{1}{12}}$
+	\item [(b)] $F(x)=P((b-a)U+a\leq x)=P(U\leq\frac{x-a}{b-a})=\int_0^{\frac{x-a}{b-a}}1du=\frac{x-a}{b-a}$\\$g(x)=\frac{d}{dx}(F(x))=\begin{cases}\frac{1}{b-a}&0\leq x\leq 1\\0&x<0\text{ or }x>1\end{cases}$\\$E(X)=E((b-a)U+a)=(b-a)E(U)+a=\boxed{\frac{a+b}{2}}$\\$Var(X)=Var((b-a)U+a)=(b-a)^2Var(U)=\boxed{\frac{(b-a)^2}{12}}$
+\end{itemize}
+
+\section*{Problem 3}
+\begin{itemize}
+	\item [(a)] $E(T)=\int_0^\infty tf(t)dt=\boxed{1}$\\$Var(T)=E(T^2)-E(T)^2=\int_0^\infty t^2f(t)dt-(\int_0^\infty tf(t)dt)^2=\boxed{1}$
+	\item [(b)] $F(x)=P(\frac{T}{\lambda}\leq x)=P(T\leq\lambda x)=\int_0^{\lambda x}e^{-t}dt=1-e^{-\lambda x}$\\$g(x)=\frac{d}{dx}(F(x))=\begin{cases}\lambda e^{-\lambda x}&x>0\\0&x\leq 0\end{cases}$\\$E(X)=E(\frac{T}{\lambda})=\frac{1}{\lambda}E(T)=\boxed{\frac{1}{\lambda}}$\\$Var(X)=Var(\frac{T}{\lambda})=(\frac{1}{\lambda})^2Var(T)=\boxed{\frac{1}{\lambda^2}}$
+\end{itemize}
+
+\section*{Problem 4}
+\begin{itemize}
+	\item [(a)] $E(Z)=\int_{-\infty}^\infty zf(z)dz=\boxed{0}$\\$E(|Z|)=2\int_0^\infty zf(z)dz=\boxed{\sqrt{\frac{2}{\pi}}}$\\$Var(Z)=E(Z^2)-E(Z)^2=\int_{-\infty}^\infty z^2f(z)dz-(\int_{-\infty}^\infty zf(z)dz)^2=\boxed{1}$
+	\item [(b)] $F(x)=P(\mu+\sigma Z\leq x)=P(Z\leq \frac{x-\mu}{\sigma})=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$\\$g(x)=\frac{d}{dx}(F(x))=\boxed{\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}}$\\$E(X)=E(\mu+\sigma Z)=\mu+\sigma E(Z)=\boxed{\mu}$\\$Var(X)=Var(\mu+\sigma Z)=\sigma^2Var(Z)=\boxed{\sigma^2}$
+	\item [(c)] $P(X\in[\mu-2\sigma,\mu+2\sigma])=P(Z\in[-2,2])=\boxed{95\%}$
+\end{itemize}
+
+\section*{Problem 5}
+\begin{itemize}
+	\item [(a)] $P(T\in(t,t+\Delta t))=(1-\lambda\Delta t)^\frac{t}{\Delta t}\lambda\Delta t=\boxed{e^{-\lambda t}\Delta t}$\\Let $T=\tilde{T}\Delta t$ where $\tilde{T}\sim\text{Geometric}(p=\lambda\Delta t)$, then $E(T)=E(\tilde{T})\Delta t=\frac{1}{p}\Delta t=\frac{1}{\lambda\Delta t}\Delta t=\boxed{\frac{1}{\lambda}}$
+	\item [(b)] $P(X=k)=\begin{pmatrix}n\\k\end{pmatrix}p^k(1-p)^{n-k}=\frac{(\lambda t)^k}{k!}e^{-\lambda t}$\\$E(X)=np=\frac{t}{\Delta t}\lambda\Delta t=\boxed{\lambda t}$
+\end{itemize}
+
+\section*{Problem 6}
+\begin{itemize}
+	\item [(a)] $E(X_t)=\sum_{i=1}^nE(Z_i)\Delta x=\boxed{0}$\\$Var(X_t)=\sum_{i=1}^nVar(Z_i)\Delta x^2=n\Delta x^2=\boxed{\sigma^2t}$
+	\item [(b)] $Var(X_t)=\sigma^2t=n\Delta x^2 \implies \boxed{\Delta x=\sigma\sqrt{\Delta t}}$
+	\item [(c)] The distribution of $X_t$ is $\boxed{N(0,\sigma^2t)}$ according to the central limit theorem.
+\end{itemize}
+
+\section*{Problem 7}
+\begin{itemize}
+	\item [(a)] $E(X)=np=50=\mu$\\$Var(x)=np(1-p)$\\$SD(X)=\sqrt{Var(X)}=5=\sigma$\\$Z=qnorm(0.95)=1.96$\\$X=\mu\pm Z\sigma=50\pm 9.8 \implies \boxed{X\in[40.2,59.8]}$
+	\item [(b)] $E(\hat{p})=E(\frac{X}{100})=\frac{np}{100}=0.2=\mu$\\$Var(\hat{p})=Var(\frac{X}{100})=\frac{np(1-p)}{100^2}=0.0016$\\$SD(\hat{p})=\sqrt{Var(X)}=0.04=\sigma$\\$Z=qnorm(0.95)=1.96$\\$\hat{p}=\mu\pm Z\sigma=0.2\pm 0.0784\implies\boxed{\hat{p}\in[0.1216,0.2784]}$
+	\item [(c)] $E(\hat{\pi})=E(\frac{4m}{10000})=\pi=\mu$\\$Var(\hat{\pi})=Var(\frac{4m}{10000})=\frac{4\pi-\pi^2}{10000}$\\$SD(\hat{\pi})=\sqrt{Var(\hat{\pi})}=\sqrt{\frac{4\pi-\pi^2}{10000}}=\sigma$\\$Z=qnorm(0.95)=1.96$\\$\hat{\pi}=\mu\pm Z\sigma=50\pm 9.8 \implies \boxed{\hat{\pi}\in[3.109406,3.173779]}$
+\end{itemize}
+
+\end{document}
