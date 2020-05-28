@@ -17,17 +17,57 @@
 \begin{itemize}
 	\item [1.] $D_{mac}=\dfrac{nFv_j^n+\sum_{t=1}^n tFrv_j^t}{Fv_j^n+\sum Frv_j^t}=\dfrac{10(1.118^{-1}+2*1.118^{-2})+3*110*1.118^{-3}}{10(1.118^{-1}+1.118^-2)+110*1.118^{-3}}=\boxed{2.729364}$
 	\item [2.] $D_{mac}=\dfrac{nFjv_j^n+\sum_{t=1}^n tFjv_j^t}{Fv_j^n+\sum Fjv_j^t}=\dfrac{nFjv_j^n+\sum_{t=1}^n tFjv_j^t}{Fv_j^n+Fja_{\angl{n}j}}=\dfrac{nFjv_j^n+\sum_{t=1}^n tFjv_j^t}{Fv_j^n+F(1-v_j^n)}=njv_j^n+\sum_{t=1}^n tjv_j^n=njv_j^n+j(Ia)_{\angl{n}j}=\ddot{a}_{\angl{n}j} \implies \boxed{D=\ddot{a}_{\angl{6}10\%}=4.790787}$
-	\item [5.] 
-	\item [6.] 
-	\item [8.]
-	\item [14.]
+	\item [5.] $D_{mac}=\dfrac{(Ia)_{\angl{n}i}}{a_\angl{n}i}=\dfrac{\frac{\ddot{a}_{\angl{n}i}-nv^n}{i}}{a_{\angl{n}i}}=\dfrac{\ddot{a}_{\angl{n}i}}{1-v^n}-\dfrac{nv^n}{1-v^n}=\dfrac{1}{d}-\dfrac{n}{is_{\angl{n}i}}$
+	\item [6.] $D_{mac}=\dfrac{D_1PV_1+D_2PV_2}{PV_1+PV_2}=\dfrac{12.7*0.8835F_1+14.6*1.3049F_2}{0.8835F_1+1.3049F_2}=13.5 \implies F_1=67.005728, F_2=32.994272 \implies PV_{total}=0.8835F_1+1.3049F_2=\boxed{102.25}$
+	\item [8.] $\frac{d}{di}[L(1+i)^D]=LD(1+i)^{D-1}+(1+i)^D\frac{dL}{di}=LD(1+i)^{D-1}-\frac{LD(1+i)^D}{1+i}=0$
+	\item [14.] $\frac{d}{dj}[D_{mac}(j)]=\frac{d}{dj}(\sum_t tw_t)=\sum_t t\frac{d}{dj}(w_t)=\sum_t t\frac{d}{dj}(\frac{K_tv^t}{L})=\sum_t \frac{tDLK_tv^{t+1}-t^2LK_tv^{t+1}}{L^2}<0$
 \end{itemize}
 
 \section*{Section 7.2}
 \begin{itemize}
 	\item [5.]
-	\item [6.]
-	\item [7.]
+	      \begin{itemize}
+		      \item [(a)] $v^{10}=A_5v^5+A_{15}v^{15}\\10v^{10}=5A_5v^5+15A_{15}v^{15}\\\implies \boxed{A_5=0.310461, A_{15}=0.805255}$
+		      \item [(b)]
+		            \begin{itemize}
+			            \item [(i)] $v^{10}=0.40v^5+A_{t_2}v^{t_2}\\10v^{10}=5*0.40v^5+t_2A_{t_2}v^{t_2}\\\implies \boxed{t_2=0.843197, A_{t_2}=19.052997}$
+			            \item [(ii)] $v^{10}=0.70v^5+A_{t_2}v^{t_2}\\10v^{10}=5*0.70v^5+t_2A_{t_2}v^{t_2}\\\implies t_2=-0.001875, A_{t_2}=-34.259719 \implies \boxed{\text{no solution}}$
+		            \end{itemize}
+		      \item [(c)]
+		            \begin{itemize}
+			            \item [(i)] $v^{10}=A_5v^5+0.90v^{t_2}\\10v^{10}=5A_5v^5+0.90t_2v^{t_2}\\\implies \boxed{A_5=0.125850, t_2=11.271029 \text{ or } A_5=0.430235, t_2=21.281183}$
+			            \item [(ii)] $v^{10}=A_5v^5+1.5v^{t_2}\\10v^{10}=5A_5v^5+1.5t_2v^{t_2}\\\implies \boxed{A_5=0.505572, t_2=31.914800}$
+			            \item [(iii)] $v^{10}=A_5v^5+0.75v^{t_2}\\10v^{10}=5A_5v^5+0.75t_2v^{t_2}\\\implies \boxed{\text{no real solution}}$
+		            \end{itemize}
+		      \item [(d)] \begin{itemize}
+			            \item [(i)] $v^{10}=0.80v^{t_1}+A_{15}v^{15}\\10v^{10}=0.80t_1v^{t_1}+15A_{15}v^{15}\\\implies \boxed{A_{15}=0.220775, t_{1}=9.205993}$
+			            \item [(ii)] $v^{10}=1.1v^{t_1}+A_{15}v^{15}\\10v^{10}=1.1t_1v^{t_1}+15A_{15}v^{15}\\\implies A_{15}=-0.108540, t_{1}=10.315978 \implies \boxed{\text{no solution}}$
+			            \item [(iii)] $v^{10}=0.01v^{t_1}+A_{15}v^{15}\\10v^{10}=0.01t_1v^{t_1}+15A_{15}v^{15}\\\implies A_{15}=1.369372, t_{1}=-18.393957 \implies \boxed{\text{no solution}}$
+		            \end{itemize}
+		      \item [(e)] $v^{10}=0.40v^{t_1}+0.90v^{t_2}\\10v^{10}=0.40t_1v^{t_1}+0.90t_2v^{t_2}\\\implies t_1=-635.103151, t_2=-622.957535 \implies \boxed{\text{no solution}}$
+	      \end{itemize}
+	\item [6.] $1000000v^{12}=A_{t_0}v^{t_0}+15000\ddot{a}_{\angl{12}10\%}\\12*1000000v^{12}=t_0A_{t_0}v^{t_0}+15000(Ia)_{\angl{11}10\%}\\\implies \boxed{A_{t_0}=961145.0766, t_0=16.149954}$
+	\item [7.] \begin{itemize}
+		      \item [(a)] $100(v^2+v^4+v^6)=A_1v+A_5v^5\\100(2v^2+4v^4+6v^6)=A_1v+5A_5v^5\\\implies \boxed{A_1=71.441655, A_5=229.411364}$
+		      \item [(b)] Yes because we can see that $P_A^{''}(i_0)>P_L^{''}(i_0)$ by plugging in the values above.
+	      \end{itemize}
+\end{itemize}
+
+\section*{Note 20}
+\begin{itemize}
+	\item [1.] $P_A(i_0)=P_L(i_0) \implies \sum_t A_tv^t=\sum_t L_tv^t$, then:
+	      \begin{itemize}
+		      \item [2.4] $P_A^{'}(i_0)=P_L^{'}(i_0) \implies \frac{d}{di}\sum_t A_tv^t=\frac{d}{di} \sum_t L_tv^t$ by differentiating both sides of the above equation. Then, $D_{mod,A}(i_0)=-\dfrac{\frac{d}{di}\sum_t A_tv^t}{\sum_t A_tv^t}=-\dfrac{\frac{d}{di}\sum_t L_tv^t}{\sum_t L_tv^t}=D_{mod,L}(i_0)$
+		      \item [2.5] $P_A^{'}(i_0)=P_L^{'}(i_0) \implies \sum_t tA_tv^{t}=\sum_t tL_tv^{t}$ using 2.6 shown below. Then, $D_{mac,A}(i_0)=\dfrac{\sum_t tA_tv^{t}}{\sum_t A_tv^{t}}=\dfrac{\sum_t tL_tv^{t}}{\sum_t L_tv^{t}}=D_{mac,L}(i_0)$.
+		      \item [2.6] By differentiating $P_A(i_0)=P_L(i_0)$, $P_A^{'}(i_0)=P_L^{'}(i_0) \implies \frac{d}{di}\sum_t A_tv^t=\frac{d}{di}\sum_t L_tv^t \implies \sum_t A_t(-tv^{t+1})=\sum_t L_t(-tv^{t+1}) \implies \sum_t tA_tv^{t+1}=\sum_t tL_tv^{t+1} \implies \sum_t tA_tv^{t}=\sum_t tL_tv^{t}$
+	      \end{itemize}
+	\item [2.] As shown above, $P_A(i_0)=P_L(i_0) \implies \sum_t A_tv^t=\sum_t L_tv^t$ and $P_A^{'}(i_0)=P_L^{'}(i_0) \implies \sum_t tA_tv^{t}=\sum_t tL_tv^{t}$. Then:
+	      \begin{itemize}
+		      \item [2.7] $P_A^{''}(i_0)>P_L^{''}(i_0) \implies \sum_t t^2A_tv^{t}>\sum_t t^2L_tv^{t}$ as shown below in 2.9, which implies that $\frac{d^2}{di^2}P_A(i)>\frac{d^2}{di^2}P_L(i)$. Then, dividing the previous inequality by $P_A(i_0)=P_L(i_0)$ results in $\dfrac{\frac{d^2}{di^2}P_A(i)}{P_A(i)}=\dfrac{\frac{d^2}{di^2}P_L(i)}{P_L(i)} \implies C_{mod,A}(i_0)>C_{mod,L}(i_0)$.
+		      \item [2.8] $P_A^{''}(i_0)>P_L^{''}(i_0) \implies \sum_t t^2A_tv^{t}>\sum_t t^2L_tv^{t}$ as shown below in 2.9. Then, dividing the previous inequality by $P_A(i_0)=P_L(i_0)$ results in $\dfrac{\sum_t t^2A_tv^{t}}{\sum_t A_tv^t}=\dfrac{\sum_t t^2L_tv^{t}}{\sum_t L_tv^t} \implies C_{mac,A}(i_0)>C_{mac,L}(i_0)$.
+		      \item [2.9] By differentiating $P_A^{'}(i_0)=P_L^{'}(i_0)$, $P_A^{''}(i_0)>P_L^{''}(i_0) \implies \frac{d}{di}\sum_t tA_tv^t>\frac{d}{di}\sum_t tL_tv^t \implies \sum_t tA_t(-tv^{t+1})>\sum_t tL_t(-tv^{t+1}) \implies \sum_t t^2A_tv^{t+1}>\sum_t t^2L_tv^{t+1} \implies \sum_t t^2A_tv^{t}>\sum_t t^2L_tv^{t}$.
+		      \item [2.10] Since $D_{mac}(i_0)$ is constant on both sides and given 2.9 shown above, $\sum_t [t-D_{mac}(i_0)]^2A_tv^{t}>\sum_t [t-D_{mac}(i_0)]^2L_tv^{t}$.
+	      \end{itemize}
 \end{itemize}
 
 \end{document}

@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Math 115A Homework 3}
+\date{5/25/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{itemize}
+	\item [3.] We say that two linear operators $S$ and $T$ \textit{commute} if $S\circ T=T\circ S$. Let $T:V\rightarrow V$ be a diagonalisable linear operator. Define \[C(T)=\{S\in\text{Hom}(V,V)\mid S\text{ and }T\text{ commute}\}.\]
+	      \begin{itemize}
+		      \item [(a)] If $T$ has $n=dim V$ distinct eigenvalues, show that any $S\in C(T)$ is diagonalisable.\\
+		            \textbf{Answer: } Let $\{\lambda_1,\ldots,\lambda_n\}$ be $n$ distinct eigenvalues of $T$. Since the eigenvalues are distinct, there must exist an eigenbasis $\beta=\{v_1,\ldots,v_n\}$ of $T$ where $\lambda_i$ is the corresponding eigenvalue of $v_i$. By definition of eigenvalues, $T(v_i)=\lambda_iv_i$ for $v_i\in\beta$. We can apply $T$ to $S(v_i)\in V$ as follows: $T(S(v_i))=\lambda_iS(v_i)$, which implies that $S(v_i)$ is also an eigenvector of $T$ with corresponding eigenvalue $\lambda_i$. In addition, since $dim V=n$, each eigenspace $E_i$ must be dimension $1$. Therefore, $S(v_i)$ and $v_i$ must be linearly dependent, i.e. $S(v_i)=a_iv_i, a_i\in\mathbb{F}$, which implies that $v_i$ is also an eigenvector of $S$ with corresponding eigenvalue $a_i$. Then $\beta$ is also an eigenbasis of $S$ and $[S]_\beta$ is diagonal, thus $S$ is diagonalisable.
+		      \item [(b)] Describe explicitly $C(T)$ in the case $T=x\frac{d}{dx}:\mathbb{C}_1[x]\rightarrow\mathbb{C}_1[x]$.\\
+		            \textbf{Answer: } We can first find $[T]$ by applying the transformation to each vector of the standard basis $\{1,x\}$ of $\mathbb{C}_1[x]$, resulting in the following: \[[T]=\begin{pmatrix}0&0\\0&1\end{pmatrix}.\] Then, $S\in C(T)$ implies \[S\circ T=T\circ S\]\[\implies\begin{pmatrix}s_{11}&s_{12}\\s_{21}&s_{22}\end{pmatrix}\begin{pmatrix}0&0\\0&1\end{pmatrix}=\begin{pmatrix}0&0\\0&1\end{pmatrix}\begin{pmatrix}s_{11}&s_{12}\\s_{21}&s_{22}\end{pmatrix}\]\[\implies\begin{pmatrix}0&s_{12}\\0&s_{22}\end{pmatrix}=\begin{pmatrix}0&0\\s_{21}&s_{22}\end{pmatrix}\]\[\implies s_{12}=s_{21}=0.\] Meaning that any $[S]$ must have the form $\begin{pmatrix}a&0\\0&b\end{pmatrix}$ for $a,b\in\mathbb{C}$. Therefore, $C(T)=\{S\in\text{Hom}(\mathbb{C}_1[x],\mathbb{C}_1[x])\mid S(1)=a, S(x)=bx\}$
+		      \item [(c)] Show that part (a) does not necessarily hold if $T$ does not have $n$ distinct eigenvalues.\\
+					\textbf{Answer: } By counterexample: define $T:\mathbb{R}^2\rightarrow
+					\mathbb{R}^2$ such that $[T]_\beta^\beta=\begin{pmatrix}1&1\\0&1\end{pmatrix}$ for standard basis $\beta$ of $\mathbb{R}^2$. Note that $T$ has a single eigenvalue of $1$ with multiplicity $2$ (i.e. not distinct). Then, we can try to find a corresponding $S$ as part (b) as follows: \[S\circ T=T\circ S\]\[\implies\begin{pmatrix}s_{11}&s_{12}\\s_{21}&s_{22}\end{pmatrix}\begin{pmatrix}1&1\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}s_{11}&s_{12}\\s_{21}&s_{22}\end{pmatrix}\]\[\implies\begin{pmatrix}s_{11}+s_{21}&s_{12}+s_{22}\\s_{21}&s_{22}\end{pmatrix}=\begin{pmatrix}s_{11}&s_{11}+s_{12}\\s_{21}&s_{21}+s_{22}\end{pmatrix}\]\[\implies s_{21}=0, s_{11}=s_{22}\]\[\implies [S]_\beta=\begin{pmatrix}a&b\\0&a\end{pmatrix},\] which is not always diagonalisable as $\text{det}(S-\lambda I)=0$ has no real solution when $a=-1$.
+	      \end{itemize}
+	\item [6.] Let $V$ be a vector space and $\mathcal{A}\subset\text{Hom}(V,V)$ a subset such that every $X\in\mathcal{A}$ is diagonalisable. We say $\mathcal{A}$ is diagonalisable if there exists a basis $B$ of $V$ such that $B$ is an eigenbasis for all $X\in\mathcal{A}$.
+	      \begin{itemize}
+		      \item [(a)] Show that if $\mathcal{A}$ is diagonalisable then for every pair of elements $X,Y\in\mathcal{A}$, we have $X\circ Y=Y\circ X$.\\
+		            \textbf{Answer: } Since $B$ is an eigenbasis for all elements of $\mathcal{A}$, $[X]_B$ and $[Y]_B$ are both diagonal matrices. That is, we can define them as follows: \[X=\begin{pmatrix}x_1&0&0\\0&\ddots&0\\0&0&x_n\end{pmatrix}\text{ and }Y=\begin{pmatrix}y_1&0&0\\0&\ddots&0\\0&0&y_n\end{pmatrix}\] with $n=dimV$. Then, \[[X\circ Y]_B=\begin{pmatrix}x_1y_1&0&0\\0&\ddots&0\\0&0&x_ny_n\end{pmatrix}=\begin{pmatrix}y_1x_1&0&0\\0&\ddots&0\\0&0&y_nx_n\end{pmatrix}=[Y\circ X]_B.\] Thus $X\circ Y=Y\circ X$.
+		      \item [(b)] Give an example of a set $\mathcal{A}$ that is \textit{not} diagonalisable. Every element of $\mathcal{A}$ must be diagonalisable, it must contain at least two elements.\\
+		            \textbf{Answer: } Such $\mathcal{A}$ would contain elements that are diagonalisable but under different bases. We can construct such a set $\mathcal{A}=\{T,S\}$ as follows. Let $V=\mathbb{R}^2$ and $B=\{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}\},C=\{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}\}$ be two different bases of $\mathbb{R}^2$. For simplicity, we can first construct a $T\in\mathcal{A}$ such that $B$ is an eigenbasis of $T$, e.g. $[T]_B=\begin{pmatrix}1&0\\0&2\end{pmatrix}$. Then, construct $S\in\mathcal{A}$ such that $C$ is an eigenbasis of $S$: $[S]_C=\begin{pmatrix}3&0\\0&4\end{pmatrix}\implies [S]_B=\begin{pmatrix}3&0\\1&4\end{pmatrix}$. By construction, $T$ and $S$ are diagonalisable under $B$ and $C$, respectively. By part (a), we can verify that $\mathcal{A}$ is not diagonalisable by evaluating $[T\circ S]_B$ and $[S\circ T]_B$: \[[T\circ S]_B=\begin{pmatrix}3&0\\2&8\end{pmatrix}\neq\begin{pmatrix}3&0\\1&8\end{pmatrix}=[S\circ T]_B.\] Indeed $\mathcal{A}=\{S,T\}$ is not diagonalisable.
+	      \end{itemize}
+\end{itemize}
+
+\end{document}
