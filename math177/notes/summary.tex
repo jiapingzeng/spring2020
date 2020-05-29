@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{actuarialangle}
+\usepackage{relsize}
+
+\title{Math 177 Summary \& Formulas}
+\author{Jiaping Zeng}
+\date{5/28/2020}
+
+\begin{document}
+\maketitle
+
+\section*{Chapter 1}
+\begin{itemize}
+	\item Key topics: interest rates, accumulation, force of interest
+	\item Important formulas:
+	\begin{itemize}
+		\item Nominal interest $(i^{(m)})$: $1+i=\left(1+\dfrac{1^{(m)}}{m}\right)^m$
+		\item Present value factor: $v=\dfrac{1}{1+i}$
+		\item Rate of discount: $d=\dfrac{i}{1+i}$
+		\item Force of interest $(\delta_t)$: $a(t)=e^{\int_0^\delta \delta_s ds}$
+	\end{itemize}
+\end{itemize}
+
+\section*{Chapter 2}
+\begin{itemize}
+	\item Key topic: annuities
+	\item Important formulas:
+	\begin{itemize}
+		\item Annuity-immediate: $s_{\angl{n}i}=\dfrac{(1+i)^n-1}{i}$, $a_{\angl{n}i}=\dfrac{1-v^n}{i}$
+		\item Annuity-due: $\ddot{s}_{\angl{n}i}=\dfrac{(1+i)^n-1}{d}$, $\ddot{a}_{\angl{n}i}=\dfrac{1-v^n}{d}$
+		\item Arithmetically increasing annuity: $(Is)_{\angl{n}i}=\dfrac{\ddot{s}_{\angl{n}i}-n}{i}$, $(Ia)_{\angl{n}i}=\dfrac{\ddot{a}_{\angl{n}i}-nv^n}{i}$
+	\end{itemize}
+\end{itemize}
+
+\section*{Chapter 3}
+\begin{itemize}
+	\item Key topic: loans
+	\item Important formulas:
+	\begin{itemize}
+		\item Basic/recursive definition: $B_0=L$, $I_t=iB_{t-1}$, $P_t=K_t-I_t$, $B_t=B_{t-1}-P_t$
+		\item Loan with level payments: $B_t=a_\angl{n-t}$, $I_t=1-v^{n+1-t}$, $P_t=v^{n+1-t}$
+	\end{itemize}
+\end{itemize}
+
+\section*{Chapter 4}
+\begin{itemize}
+	\item Key topic: bonds
+	\item Important formulas:
+	\begin{itemize}
+		\item Price of bond: $P=Cv_j^n+Fra_{\angl{n}j}$
+		\item Premium/Discount (when $C=F$): $P=F+F(r-j)a_{\angl{n}j}$
+		\item Makeham's formula ($K=Cv_j^n$): $P=K+\dfrac{r}{j}(F-k)$
+	\end{itemize}
+\end{itemize}
+
+\section*{Chapter 5}
+\begin{itemize}
+	\item Key topic: rate of return
+	\item Important formulas:
+	\begin{itemize}
+		\item Net present value: $P(i)=\mathlarger{\sum_{k=0}^n}C_kv_i^{t^k}$ ($C_k$: net flow at time $t$)
+		\item Dollar-weighted rate of return $(i_D)$: $A(1+i_D)+\mathlarger{\sum_{k=1}^n}C_k(1+i_D(1-t_k))=B$, ($A, B$: amount in fund at start, end of the year)
+		\item Time-weighted rate of return $(i_T)$: $1+i_T=\mathlarger{\prod_{k=1}^{n+1}}\dfrac{[\text{amount just before }t_k]}{\text{[amount just after }t_{k-1}]}$
+	\end{itemize}
+\end{itemize}
+
+\section*{Chapter 6}
+\begin{itemize}
+	\item Key topics: spot rates, forward rates
+	\item Important formulas:
+	\begin{itemize}
+		\item Forward interest rate ($f_{[t_1,t_2]}$): $(1+r_{t_1})^{t_1}(1+f_{[t_1,t_2]})^{t_2-t_1}=(1+r_{t_2})^{t_2}$
+		\item Spot rate ($r_t$) from forward rates: $(1+r_n)^n=\mathlarger{\prod_{t=1}^n}(1+f_{[t-1,t]})$
+	\end{itemize}
+\end{itemize}
+
+\section*{Chapter 7}
+\begin{itemize}
+	\item Key topic: cash flows
+	\item Important formulas:
+	\begin{itemize}
+		\item Macaulay duration: $D_{mac}(i)=\dfrac{\sum_{t=1}^ntK_t(1+i)^{-t}}{\sum_{t=1}^nK_t(1+i)^{-t}}$
+		\item Modified duration: $D_{mod}(i)=-\dfrac{\frac{d}{di}P(i)}{P(i)}$, ($P(i)=\sum_{t=1}^nK_t(1+i)^{-t}$: present value of cash flow)
+		\item For flat term structure: $D_{mod}(i)=vD_{mac}(i)$
+		\item Macaulay convexity: $C_{mac}(i)=\dfrac{\sum_{t=1}^nt^2K_tv^t}{\sum_{t=1}^nK_tv^t}$
+		\item Modified convexity: $C_{mod}(i)=\dfrac{\frac{d^2}{di^2}P(i)}{P(i)}$
+	\end{itemize}
+\end{itemize}
+
+\end{document}
