@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+
+\title{Math 115A Homework 4}
+\date{5/30/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{itemize}
+	\item [2.] Let $V$ be a finite dimensional inner product space over $\mathbb{F}=\mathbb{R}\text{ or }\mathbb{C}$. 
+	\begin{itemize}
+		\item [(a)] Fix $y\in V$ and suppose $\langle x,y\rangle=0$ for all $x\in V$. Show that $y=0$.\\
+		\textbf{Answer: } By contradiction. Suppose $y$ is nonzero and choose $x=y\neq 0$, then $\langle x,y\rangle=0 \implies \langle x,x\rangle=0$ for $x\neq 0$. This contradicts axiom (iv) of inner product space, therefore the initial assumption is false and $y=0$.
+		\item [(b)] Let $T:V\rightarrow V$ be a linear map such that $\langle T(x),T(y)\rangle=\langle x,y\rangle$ for all pairs $x,y\in V$ (we call such a map a \textit{metric} map). Prove that $T$ is an isomorphism.\\
+		\textbf{Answer: } Let $\text{dim}V=n$ and $\beta=\{u_1,\ldots,u_n\}$ orthogonal basis of $V$. Take two arbitrary vectors of $\beta$, $u_x$ and $u_y$, we have $\langle u_x,u_y\rangle=\langle T(u_x),T(u_y)\rangle$ by definition of $T$. Since $\beta$ is an orthonormal basis, $\langle u_x,u_y\rangle=0$ and therefore $\langle T(u_x),T(u_y)\rangle=0$, implying that $T(u_x)$ and $T(u_y)$ are orthogonal. Using this process on $u_1,\ldots,u_n$ yields the orthogonal set $\gamma=\{T(u_1),\ldots,T(u_n)\}$. Since $\gamma$ is automatically linearly independent and has dimension $n$, $T(\beta)=\gamma$ spans $V$, i.e. $rank(T)=n=dim(V)$. Then by rank-nullity theorem $T$ is an isomorphism.
+		\item [(c)] Find all metric maps $T:\mathbb{R}^2\rightarrow\mathbb{R}^2$ that have $\text{det}T=1$.\\
+		\textbf{Answer: } Let $x=\begin{pmatrix}x_1\\x_2\end{pmatrix}$ and $y=\begin{pmatrix}y_1\\y_2\end{pmatrix}$ be generic nonzero vectors of $\mathbb{R}^2$. In addition, let $[T]=\begin{pmatrix}a&b\\c&d\end{pmatrix}$. Then, $\text{det}T=1$ implies that $ad-bc=1$. Using the definition of metric map, we also have $\langle T(x),T(y)\rangle=\langle x,y\rangle$. We can substitute $T$, $x$ and $y$ as follows: \[\langle\begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}x_1\\x_2\end{pmatrix},\begin{pmatrix}a&b\\c&d\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}\rangle=\langle\begin{pmatrix}x_1\\x_2\end{pmatrix},\begin{pmatrix}y_1\\y_2\end{pmatrix}\rangle\]\[\implies\langle\begin{pmatrix}ax_1+bx_2\\cx_1+dx_2\end{pmatrix},\begin{pmatrix}ay_1+by_2\\cy_1+dy_2\end{pmatrix}\rangle=x_1y_1+x_2y_2\]\[\implies(ax_1+bx_2)(ay_1+by_2)+(cx_1+dx_2)(cy_1+dy_2)=x_1y_1+x_2y_2\]\[\implies(a^2+c^2)x_1y_1+(b^2+d^2)x_2y_2+(ab+cd)(x_1y_2+x_2y_1)=x_1y_1+x_2y_2\] By matching coefficients, we have the following system of equations:\[a^2+c^2=1,b^2+d^2=1,ab+cd=0,ad-bc=1\] which has solution \[a=d,b=\pm\sqrt{1-a^2},c=\mp\sqrt{1-a^2}\] Then, the set of all $T:\mathbb{R}^2\rightarrow\mathbb{R}^2$ that satisfies the form $[T]=\begin{pmatrix}a&\pm\sqrt{1-a^2}\\\mp\sqrt{1-a^2}&a\end{pmatrix}$ contains all metric maps with $\text{det}T=1$.
+	\end{itemize}
+	\item [4.] Let $V$ be an inner product space and let $r:V\rightarrow V^*$ be the map $r(x)=\varphi_x:=\langle x,-\rangle$. In class we showed that if $V$ is finite dimensional then $r$ is an isomorphism.
+	\begin{itemize}
+		\item [(a)] Assume that $V$ is finite dimensional. Prove that $r$ is injective.\\
+		\textbf{Answer: }
+		\item [(b)] Let $V=\mathbb{R}[x]$ and let $W=\{(a_0,a_1,...)\mid a_i\in\mathbb{R}\}$ be the vector space of all infinite sequences. Show that the map $\mathit{f}:V^*\rightarrow W$ given by $\mathit{f}(\varphi)=(\varphi(x^n))_{n\geq 0}$.\\
+		\textbf{Answer: }
+		\item [(c)] Use this to demonstrate that $r$ is not necessarily surjective, i.e. find an element $\varphi\in V^*$ such that $\varphi\neq r(p)$ for any $p\in\mathbb{R}[x]$.\\
+		\textbf{Answer: }
+	\end{itemize}
+	\item [5.] Let $V$ be a finite dimensional inner product space. For any $T:V\rightarrow V$ define $\check{T}:V^*\rightarrow V^*$ by $\check{T}(\phi)=\phi\circ T$. Furthermore for any $X:V^*\rightarrow V^*$ define $X^\perp:V\rightarrow V$ by $X^\perp=r^{-1}\circ X\circ r$. Prove that $T^*=\check{T}^\perp$.\\
+	\textbf{Answer: }
+\end{itemize}
+
+\end{document}
