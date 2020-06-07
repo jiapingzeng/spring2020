@@ -27,11 +27,11 @@
 	\item [4.] Let $V$ be an inner product space and let $r:V\rightarrow V^*$ be the map $r(x)=\varphi_x:=\langle x,-\rangle$. In class we showed that if $V$ is finite dimensional then $r$ is an isomorphism.
 	\begin{itemize}
 		\item [(a)] Assume that $V$ is finite dimensional. Prove that $r$ is injective.\\
-		\textbf{Answer: }
-		\item [(b)] Let $V=\mathbb{R}[x]$ and let $W=\{(a_0,a_1,...)\mid a_i\in\mathbb{R}\}$ be the vector space of all infinite sequences. Show that the map $\mathit{f}:V^*\rightarrow W$ given by $\mathit{f}(\varphi)=(\varphi(x^n))_{n\geq 0}$.\\
-		\textbf{Answer: }
+		\textbf{Answer: } We can prove that $r$ is injective by checking its kernel: $r(x)=0\implies\langle y,x\rangle=0$ for all $y\in V$. As shown in (2a), $x$ must be $0$. Therefore the kernel of $r$ contains only the zero vector, thus $r$ is injective.
+		\item [(b)] Let $V=\mathbb{R}[x]$ and let $W=\{(a_0,a_1,...)\mid a_i\in\mathbb{R}\}$ be the vector space of all infinite sequences. Show that the map $\mathit{f}:V^*\rightarrow W$ given by $\mathit{f}(\varphi)=(\varphi(x^n))_{n\geq 0}$ is an isomorphism.\\
+		\textbf{Answer: } Since $\varphi$ is a polynomial, $\mathit{f}$ is linear as $\mathit{f}(c\varphi_1+\varphi_2)=(\varphi_1(cx^n))_{n\geq 0}+(\varphi_2(x^n))_{n\geq 0}=c\mathit{f}(\varphi_1)+\mathit{f}(\varphi_2)$
 		\item [(c)] Use this to demonstrate that $r$ is not necessarily surjective, i.e. find an element $\varphi\in V^*$ such that $\varphi\neq r(p)$ for any $p\in\mathbb{R}[x]$.\\
-		\textbf{Answer: }
+		\textbf{Answer: } 
 	\end{itemize}
 	\item [5.] Let $V$ be a finite dimensional inner product space. For any $T:V\rightarrow V$ define $\check{T}:V^*\rightarrow V^*$ by $\check{T}(\phi)=\phi\circ T$. Furthermore for any $X:V^*\rightarrow V^*$ define $X^\perp:V\rightarrow V$ by $X^\perp=r^{-1}\circ X\circ r$. Prove that $T^*=\check{T}^\perp$.\\
 	\textbf{Answer: }
