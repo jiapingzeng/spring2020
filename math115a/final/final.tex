@@ -17,7 +17,7 @@
 		      \item [(a)] $V$ is the space of polynomials of degree up to 3 such that the coefficients of its terms combine to 0; i.e. an arbitrary vector in $V$ would look like $p(x)=ax+bx^2+cx^3-(a+b+c)=a(x-1)+b(x^2-1)+c(x^3-1)$. Then, $\beta=\{x-1,x^2-1,x^3-1\}$ is a basis of $V$.
 		      \item [(b)] $T(x-1)=x-1$\\$T(x^2-1)=x^2+2x-3=2(x-1)+(x^2-1)$\\$T(x^3-1)=x^3+6x^2-6x-1=-6(x-1)+6(x^2-1)+(x^3-1)$\[\implies[T]_\beta=\begin{pmatrix}
 				            1 & 2 & -6 \\0&1&6\\0&0&1
-			            \end{pmatrix}\]\[\implies P_T(\lambda)=\text{det}(T-\lambda I)=(1-\lambda)^3\]
+			            \end{pmatrix}\]\[\implies P_T(\lambda)=\text{det}(T-\lambda Id)=(1-\lambda)^3\]
 		      \item [(c)] $T$ has a single eigenvalue $\lambda=1$ with algebraic multiplicity $3$.
 		      \item [(d)] $T(v)=1v$\[\implies\begin{pmatrix}1&2&-6\\0&1&6\\0&0&1\end{pmatrix}\begin{pmatrix}a\\b\\c\end{pmatrix}=\begin{pmatrix}a\\b\\c\end{pmatrix}\]\[\begin{pmatrix}
 				            a+2b-6c \\b+6c\\c
@@ -33,9 +33,9 @@
 \begin{itemize}
 	\item [2.]
 	      \begin{itemize}
-		      \item [(a)] Let $C=\{P,Q,R\}$. Then, \[P=H\]\[Q=K-\dfrac{\langle K,P\rangle}{||P||^2}P=K-\dfrac{2}{2}P=\begin{pmatrix}0&1\\0&0\end{pmatrix}\]\[R=L-\dfrac{\langle L,P\rangle}{||P||^2}P-\dfrac{\langle L,Q\rangle}{||Q||^2}Q=L-\dfrac{2}{2}P-\dfrac{1}{0}Q\]
-		      \item [(b)] $\langle T(Id),E\rangle=\langle Id,T^*(E)\rangle$
-		      \item [(c)]
+		      \item [(a)] Let $C=\{P,Q,R\}$. We can construct $P,Q,R$ using Gram-Schmidt as follows: \[P=H=\begin{pmatrix}1&0\\0&-1\end{pmatrix}\]\[Q=K-\dfrac{\langle K,P\rangle}{||P||^2}P=K-\dfrac{2}{2}P=\begin{pmatrix}0&1\\0&0\end{pmatrix}\]\[R=L-\dfrac{\langle L,P\rangle}{||P||^2}P-\dfrac{\langle L,Q\rangle}{||Q||^2}Q=L-\dfrac{2}{2}P-\dfrac{0}{1}Q=\begin{pmatrix}0&0\\1&0\end{pmatrix}\]Then $C=\{P,Q,R\}$ is an orthogonal basis for $V$.
+		      \item [(b)] $T(P)=EP-PE=-2Q$\\$T(Q)=EQ-QE=0$\\$T(R)=ER-RE=P$\[\implies[T]_C=\begin{pmatrix}0&0&1\\-2&0&0\\0&0&0\end{pmatrix}\]\[\implies [T^*]_C=\begin{pmatrix}0&-2&0\\0&0&0\\1&0&0\end{pmatrix}\]\[\implies T^*(E)=\begin{pmatrix}0&-2&0\\0&0&0\\1&0&0\end{pmatrix}\begin{pmatrix}0\\1\\0\end{pmatrix}=\begin{pmatrix}-2\\0\\0\end{pmatrix}\] Then $T^*(E)=-2P=\begin{pmatrix}-2&0\\0&2\end{pmatrix}$
+		      \item [(c)] \[[T]_C[T^*]_C=\begin{pmatrix}0&0&1\\-2&0&0\\0&0&0\end{pmatrix}\begin{pmatrix}0&-2&0\\0&0&0\\1&0&0\end{pmatrix}=\begin{pmatrix}1&0&0\\0&4&0\\0&0&0\end{pmatrix}\]\[[T^*]_C[T]_C=\begin{pmatrix}0&-2&0\\0&0&0\\1&0&0\end{pmatrix}\begin{pmatrix}0&0&1\\-2&0&0\\0&0&0\end{pmatrix}=\begin{pmatrix}4&0&0\\0&0&0\\0&0&1\end{pmatrix}\]Since $T\circ T^*\neq T^*\circ T$, $T$ is not normal.
 	      \end{itemize}
 \end{itemize}
 
@@ -45,16 +45,17 @@
 	\item [3.]
 	      \begin{itemize}
 			  \item [(a)] 
-			  To show that $W'$ is also an $X$-subspace, it suffices to show that $\langle X(u),w\rangle+\langle X(X(u)),X(w)\rangle=0$ for $u\in W'$. We can simplify the above expression as follows:\\$\langle X(u),w\rangle+\langle X(X(u)),X(w)\rangle$\\$=\langle X(u),w\rangle+\langle X^2(u),X(w)\rangle$\\$=\langle X(u),w\rangle+\langle u,X(w)\rangle$
-		      \item [(b)] Let $u,v,w\in V$ and $a\in\mathbb{F}$. Then we can verify the definiton of inner product as follows:
+			  Since $X^2=Id$, we have $X(X(w))=w$ for all $w\in W$, i.e. $X$ is invertible and $X=X^{-1}$. To show that $W'$ is also an $X$-subspace, it suffices to show that $\langle X(u),w\rangle+\langle X(X(u)),X(w)\rangle=0$ for $u\in W'$. Since $X$ is invertible, we can choose $X(w)\in W$ to represent all vectors in $W$. Then verifying the following equivalently shows that $W'$ is an $X$-subspace: $\langle X(u),X(w)\rangle+\langle X(X(u)),X(X(w))\rangle=0$. We can simplify the previous expression as follows:
+			  \\$\langle X(u),X(w)\rangle+\langle X(X(u)),X(X(w))\rangle$\\$=\langle X(u),X(w)\rangle+\langle X^2(u),X^2(w)\rangle$\\$=\langle X(u),X(w)\rangle+\langle u,w\rangle$\\$=\langle u,w\rangle+\langle X(u),X(w)\rangle$\\$=0$\\Therefore $X(u)\in W^\prime$ and $W^\prime$ is an $X$-subspace.
+		      \item [(b)] Let $u,v,w\in V$ and $a\in\mathbb{F}$. Then we can verify the axioms of inner product as follows:
 		            \begin{itemize}
 			            \item [(i)] $\langle u,v\rangle_X$\\$=\langle u,v\rangle+\langle X(u),X(v)\rangle$\\$=\overline{\langle v,u\rangle}+\overline{\langle X(u),X(v)\rangle}$\\$=\overline{\langle v,u\rangle}_X$
 			            \item [(ii)] $\langle au,v\rangle_X$\\$=\langle au,v\rangle+\langle X(au),X(v)\rangle$\\$=a\langle u,v\rangle+a\langle X(u),X(v)\rangle$\\$=a(\langle u,v\rangle+\langle X(u),X(v)\rangle)$\\$=a\langle u,v\rangle_X$
 			            \item [(iii)] $\langle u+v,w\rangle_X$\\$=\langle u+v,w\rangle+\langle X(u+v),X(w)\rangle$\\$=(\langle u,w\rangle+\langle v,w\rangle)+(\langle X(u),X(w)\rangle+\langle X(v),X(w)\rangle)$\\$=(\langle u,w\rangle+\langle X(u),X(w)\rangle)+(\langle v,w\rangle+\langle X(v),X(w)\rangle)$\\$=\langle u,w\rangle_X+\langle v,w\rangle_X$
 			            \item [(iv)] $\langle v,v\rangle_X=\langle v,v\rangle+\langle X(v),X(v)\rangle$ by definiton. If $v\neq 0$, then $\langle v,v\rangle>0$. In addition, $\langle X(v),X(v)\rangle\geq 0$ even if $X(v)=0$. Then, $\langle v,v\rangle_X>0$ for nonzero $v\in V$.
 		            \end{itemize}
-		      \item [(c)] To be proved
-		      \item [(d)]
+		      \item [(c)] By definition of $W^\prime$, $\langle u,w\rangle+\langle X(u),X(w)\rangle=0$ for $u\in W^\prime$ and $w\in W$, i.e. $\langle u,w\rangle_X=0$. Then $W^\prime=W^\perp$. Since $W\oplus W^\perp=V$, we also have $W\oplus W^\prime=V$.
+		      \item [(d)] $\langle X(u),w\rangle_X=\langle u,X^*(w)\rangle_X$\\$\implies\langle X(u),w\rangle+\langle X^2(u),X(w)\rangle=\langle u,X^*(w)\rangle+\langle X(u),X(X^*(w))\rangle$\\$\implies\langle X(u),w\rangle+\langle u,X(w)\rangle=\langle u,X^*(w)\rangle+\langle X(u),(X\circ X)^*(w))\rangle$\\$\implies\langle X(u),w\rangle+\langle u,X(w)\rangle=\langle u,X^*(w)\rangle+\langle X(u),w\rangle$\\$\implies\langle u,X(w)\rangle=\langle u,X^*(w)\rangle$\\$\implies X(w)=X^*(w)$\\Therefore $X^*=X$, i.e. $X$ is self-adjoint as shown above.
 	      \end{itemize}
 \end{itemize}
 
@@ -65,11 +66,11 @@
 	      \begin{itemize}
 			  \item [(a)] To be proved: $T$ is an isomorphism $\Leftrightarrow T(B)$ is a basis for $W$:
 			  \begin{itemize}
-				  \item [$\Rightarrow$:] 
-				  \item [$\Leftarrow$:] 
+				  \item [$\Rightarrow$:] Let $B=\{u_0,u_1,\ldots\}, u_i\in V$. Since $B$ is linearly independent, $a_0u_0+a_1u_0+\ldots=0_V, a_i\in\mathbb{F}$ is only true when $a_i=0$. Applying $T$ to both sides, we have $T(a_0u_0+a_1u_0+\ldots)=T(0) \implies a_0T(u_0)+a_1T(u_1)+\ldots=0_W$. Since $a_i=0$, $\{T(u_0),T(u_1),\ldots\}$ is a linearly independent set in $W$. Since $T$ is surjective, $\text{im}(T)=\text{span}(T(B))=W$. Then $T(B)$ is both linearly independent and spanning in $W$ and is therefore a basis.
+				  \item [$\Leftarrow$:] Let $B=\{u_0,u_1,\ldots\}, u_i\in V$ and $T(B)=\{v_1,v_2,\ldots\},v_i\in W$ such that $T(u_i)=v_i$. Take an arbitrary $p\in V$, $p$ can be written as $p=a_0u_0+a_1u_1+\ldots, a_i\in\mathbb{F}$ since $B$ is a basis. Then $T(p)=a_0T(u_0)+a_1T(u_1)+\ldots=a_0v_0+a_1v_1+\ldots$ by linearity. Since $T(B)$ is a basis for $W$, $\text{span}(T(B))=\text{im}(T)=W$. Therefore $T$ is surjective. Additionally, $0_W=a_0v_0+a_1v_1+\ldots$ only if $a_i=0$. Then $T(p)=0_W\implies T(p)=a_0v_0+a_1v_1+\ldots, a_i=0$. By definition of $T(B)$ we can then replace $v_i$ with $T(u_i)$ as follows: $T(p)=a_0T(u_0)+a_1T(u_1)+\ldots=T(a_0u_0+a_1u_1+\ldots), a_i=0$. Then $p=a_0u_0+a_1u_1,a_i=0$, i.e. $p=0_V$. Therefore $\text{ker}(T)=\{0\}$ and $T$ is injective. Since $T$ is both injective and surjective, it is an isomorphism.
 			  \end{itemize}
-		      \item [(b)]
-		      \item [(c)]
+		      \item [(b)] Let $V=\{(a_0,a_1,\ldots)\mid a_i\in\mathbb{R}\}$, i.e. the vector space of infinite sequences. Define $R:V\rightarrow V$ such that $R(a_0,a_1,\ldots)=(0,a_0,a_1,\ldots)$. Then $R$ is injective as $\text{ker}(R)=\{0\}$. However, $R$ is not surjective as sequences with the form $(k,a_0,a_1,\ldots),k\in\mathbb{F}$ is not in $\text{im}(R)$. Therefore $R$ is not an isomorphism. 
+		      \item [(c)] Again let $V=\{(a_0,a_1,\ldots)\mid a_i\in\mathbb{R}\}$. Define $S:V\rightarrow V$ such that $S(a_0,a_1,\ldots)=(a_1,a_2,\ldots)$. Then $S$ is surjective as $(a_1,a_2,\ldots)$ spans $V$. However, $\text{ker}(S)$ contains sequences with form $(a_0,0,0,\ldots)$. Therefore $S$ is not injective and not an isomorphism.
 	      \end{itemize}
 \end{itemize}
 
