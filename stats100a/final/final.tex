@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Stats 100A Final}
+\author{Jiaping Zeng}
+\date{6/10/2020}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\section*{Problem 1}
+\begin{itemize}
+	\item [(1)] $\mathlarger{\int_0^1} f(x)dx=1\implies\mathlarger{\int_0^1} axdx=1\implies\dfrac{a}{2}=1\implies \boxed{a=2}$
+	\item [(2)] $P(X>\dfrac{1}{2})=P(X\in[\dfrac{1}{2},1])=\mathlarger{\int_\frac{1}{2}^1} f(x)dx=\boxed{\frac{3}{4}}$
+	\item [(3)] $E(X)=\mathlarger{\int_0^1} xf(x)dx=\mathlarger{\int_0^1} 2x^2dx=\boxed{\dfrac{2}{3}}$\\$E(X^2)=\mathlarger{\int_0^1} x^2f(x)dx=\mathlarger{\int_0^1} 2x^3dx=\dfrac{1}{2}$\\$Var(X)=E(X^2)-E(X)^2=\dfrac{1}{2}-\dfrac{4}{9}=\boxed{\dfrac{1}{18}}$
+\end{itemize}
+
+\section*{Problem 2}
+\begin{itemize}
+	\item [(1)] $E(Y)=E(1+2X+\epsilon)=E(1)+2E(X)+E(\epsilon)=\boxed{1}$\\$Var(Y)=Var(1+2X+\epsilon)=Var(1)+2^2Var(X)+Var(\epsilon)=E(1^2)-E(1)^2+4Var(X)+Var(\epsilon)=\boxed{9}$
+	\item [(2)] $E(X^2)=Var(X)+E(X)^2=2$\\$Cov(X,Y)=E(XY)-E(X)E(Y)=E(X+2X^2+\epsilon X)-E(X)E(Y)=E(X)+2E(X^2)+E(\epsilon)E(X)-E(X)E(Y)=\boxed{4}$\\$Corr(X,Y)=\dfrac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}=\dfrac{4}{\sqrt{2}\sqrt{9}}=\boxed{\dfrac{2\sqrt{2}}{3}}$
+\end{itemize}
+
+\section*{Problem 3}
+\begin{itemize}
+	\item [(1)] $\dfrac{P(T\in[t,t+\triangle t])}{\triangle t}=\dfrac{(1-\triangle t)^\frac{t}{\triangle t}\triangle t}{\triangle t}=\dfrac{e^{-t}\triangle t}{\triangle t}=\boxed{e^{-t}}$\\$T=\widetilde{T}\triangle t$ where $\widetilde{T}\sim Geometric(p=\triangle t)\implies E(T)=E(\widetilde{T})\triangle t=\dfrac{1}{\triangle t}\triangle t=\boxed{1}$
+	\item [(2)] $X\sim Binomial(n=\frac{t}{\triangle t},p=\triangle t)\implies P(X=k)=\begin{pmatrix}n\\k\end{pmatrix}p^k(1-p)^{n-k}=\boxed{\dfrac{e^{-t}t^k}{k!}}$\\$E(X)=np=\dfrac{t}{\triangle t}\triangle t=\boxed{t}$
+\end{itemize}
+
+\section*{Problem 4}
+\begin{itemize}
+	\item [] $f_{X_i}(x)=\begin{cases}1&X_i\in[0,1]\\0&X_i\notin[0,1]\end{cases}$\\$E(X_i^2)=\mathlarger{\int_0^1} x^2f_{X_i}(x)dx=\mathlarger{\int_0^1}x^2dx=\dfrac{1}{3}$\\$E(X_i^4)=\mathlarger{\int_0^1} x^4f_{X_i}(x)dx=\mathlarger{\int_0^1}x^4dx=\dfrac{1}{5}$\\$E(Y)=\dfrac{1}{n}\mathlarger{\sum_{i=1}^n E(X_i^2)}=\dfrac{n}{3n}=\dfrac{1}{3}$\\$Var(Y)$\\$=\dfrac{1}{n^2}Var(\mathlarger{\sum_{i=1}^n X_i^2})$\\$=\dfrac{1}{n^2}[\mathlarger{\sum_{i=1}^n} Var(X_i^2)+2\mathlarger{\sum_{1\leq i<j\leq n}}Cov(X_i^2,X_j^2)]$\\$=\dfrac{1}{n^2}\mathlarger{\sum_{i=1}^n Var(X_i^2)}$\\$=\dfrac{1}{n^2}\mathlarger{\sum_{i=1}^n} [E(X_i^4)-E(X_i^2)^2]$\\$=\dfrac{1}{n^2}\mathlarger{\sum_{i=1}^n}\dfrac{4}{45}$\\$=\dfrac{4n}{45n^2}\rightarrow 0$\\Then we have $E(Y)=\dfrac{1}{3}$ and $Var(Y)\rightarrow 0$, therefore $\boxed{Y\rightarrow\dfrac{1}{3}}$ as $n\rightarrow\infty$.
+\end{itemize}
+
+\end{document}
